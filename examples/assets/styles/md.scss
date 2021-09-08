@@ -1,0 +1,177 @@
+section {
+  font-size: 14px;
+  margin-left: 30px;
+  color: #515a6e;
+
+  hr {
+    margin: 1.2em 0;
+    border: 0;
+    border-bottom: 1px solid #c5d9e8;
+  }
+
+  p {
+    padding: 0;
+    line-height: 1.9;
+    color: #3f536e;
+    font-size: 14px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    padding: 36px 0 16px;
+    line-height: 1.5;
+    font-weight: normal;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  ul {
+    margin: 16px 0;
+    padding-left: 24px;
+    list-style: disc;
+
+    li {
+      line-height: 1.8;
+    }
+  }
+
+  .hljs {
+    font-size: 14px;
+    padding: 12px 16px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    margin: 10px 0 10px 0;
+  }
+
+  pre code {
+    color: #434f54;
+  }
+
+  code:not(.hljs code) {
+    font-size: 0.9em;
+    vertical-align: middle;
+    border-radius: 3px;
+    background-color: #fff5f5;
+    color: #fa795e;
+    padding: 0.2em 0.4em;
+  }
+
+  code.code_inline {
+    padding: 0 0.5em;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  p + p {
+    margin-top: 8px;
+  }
+
+  a {
+    color: #6190e8;
+  }
+}
+
+.page-container h2 a,
+.page-container h3 a,
+.page-container h4 a,
+.page-container h5 a {
+  float: left;
+  margin-left: -20px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.page-container h2:hover a,
+.page-container h3:hover a,
+.page-container h4:hover a,
+.page-container h5:hover a {
+  opacity: 0.5;
+}
+
+.page-container {
+  .highlight {
+    .hljs {
+      background: transparent;
+    }
+  }
+
+  .tip,
+  .warning,
+  .danger {
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+
+  .tip {
+    background-color: #f3f5f7;
+    border-left: 5px solid #42b983;
+  }
+
+  .warning {
+    background-color: rgba(255, 229, 100, 0.3);
+    border-left: 5px solid #e7c000;
+    color: #6b5900;
+  }
+
+  .danger {
+    background-color: #ffe6e6;
+    border-left: 5px solid #c00;
+    color: #4d0000;
+  }
+  .content {
+    & > table {
+      font-family: Consolas, Menlo, Courier, monospace;
+      font-size: 12px;
+      border-collapse: collapse;
+      border-spacing: 0;
+      empty-cells: show;
+      width: 100%;
+      background-color: #fff;
+      color: #5e6d82;
+      overflow: auto;
+
+      &:last-child {
+        margin-bottom: 50px;
+      }
+
+      td,
+      th {
+        border: 1px solid #e9e9e9;
+        padding: 8px 16px;
+        text-align: left;
+      }
+
+      th {
+        background: #f7f7f7;
+        white-space: nowrap;
+        color: #5c6b77;
+        font-weight: 600;
+      }
+
+      //th {
+      //  border-top: 1px solid #f3f7fa;
+      //  background-color: #FAFBFC;
+      //  border-bottom: 1px solid #f3f7fa;
+      //  padding: 10px 8px;
+      //}
+      //
+      //td {
+      //  border-top: 1px solid #f3f7fa;
+      //  border-bottom: 1px solid #f3f7fa;
+      //  padding: 10px 8px;
+      //}
+    }
+  }
+}

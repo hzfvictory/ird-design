@@ -1,0 +1,68 @@
+{
+  "开发指南": [
+    {
+      "desc": "首页",
+      "name": "home",
+      "path": "/",
+      "type": "pages",
+      "hidden": true
+    },
+    {
+      "desc": "介绍",
+      "name": "guide",
+      "path": "/guide"
+    },
+    {
+      "desc": "安装",
+      "name": "install",
+      "path": "/install"
+    }
+  ],
+  "通用组件": [
+    {
+      "desc": "Icon 图标",
+      "name": "icon",
+      "path": "/icon"
+    },
+    {
+      "desc": "Button 按钮",
+      "name": "button",
+      "path": "/button"
+    },
+    {
+      "desc": "WithSearch 搜索框组件",
+      "name": "withSearch",
+      "path": "/withSearch"
+    },
+    {
+      "desc": "EnhanceTable Table组件",
+      "name": "table",
+      "path": "/table"
+    },
+    {
+      "desc": "IrdInputNumber 数字输入框",
+      "name": "inputNumber",
+      "path": "/inputNumber"
+    },
+    {
+      "desc": "IrdSelect 选择器",
+      "name": "select",
+      "path": "/select"
+    },
+    {
+      "desc": "IrdImgUpload 上传图片",
+      "name": "imgUpload",
+      "path": "/imgUpload"
+    },
+    {
+      "desc": "IrdModal 对话框",
+      "name": "modal",
+      "path": "/modal"
+    },
+    {
+      "desc": "utils 公共方法库",
+      "name": "utils",
+      "path": "/utils"
+    }
+  ]
+}

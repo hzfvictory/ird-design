@@ -1,0 +1,28 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "chrome >= 50"
+          ],
+          "node": "current"
+        },
+        "modules": false
+      }
+    ],
+    "@vue/babel-preset-jsx"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": false,
+        "helpers": false,
+        "regenerator": true
+      }
+    ]
+  ]
+}

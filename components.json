@@ -1,0 +1,9 @@
+{
+  "button": "./packages/Button/index.js",
+  "enhanceTable": "./packages/EnhanceTable/index.js",
+  "irdSelect": "./packages/IrdSelect/index.js",
+  "inputNumber": "./packages/InputNumber/index.js",
+  "irdUpload": "./packages/IrdUpload/index.js",
+  "withSearch": "./packages/WithSearch/index.js",
+  "irdModal": "./packages/IrdModal/index.js"
+}
