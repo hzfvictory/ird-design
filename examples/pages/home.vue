@@ -1,9 +1,8 @@
 <template>
   <div class="ird-index">
     <div class="index-container">
-      <p class="title">ird-design</p>
+      <p class="title">@ird/design</p>
       <p>一款轻量级、模块化的前端UI组件库</p>
-
       <router-link :to="{ path: '/guide' }">开始使用</router-link>
       <a target="_blank" class="btn-github" href="http://XXXX">
         GitHub

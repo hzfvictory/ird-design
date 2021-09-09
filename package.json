@@ -1,12 +1,11 @@
 {
-  "name": "x",
-  "version": "1.0.0",
+  "name": "@ird/design",
+  "version": "1.0.0-beta.2",
   "main": "lib/ird-design.common",
   "typings": "types/index.d.ts",
   "files": [
     "packages",
     "lib",
-    "src",
     "types"
   ],
   "scripts": {
@@ -93,14 +92,22 @@
     "webpack-node-externals": "^2.5.2",
     "webpackbar": "^5.0.0-3"
   },
-  "homepage": "http://ird-design.jing999.cn",
+  "homepage": "http://irdd.jing999.cn:9999",
   "repository": {
     "type": "git",
-    "url": "git@github.com:***/***"
+    "url": "git+https://github.com/hzfvictory/ird-design.git"
   },
   "keywords": [
     "element-ui"
   ],
   "author": "hzfvictory",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "vue组件深度封装和方法库",
+  "bugs": {
+    "url": "https://github.com/hzfvictory/ird-design/issues"
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  }
 }

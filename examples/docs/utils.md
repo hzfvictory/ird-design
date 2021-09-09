@@ -1,35 +1,42 @@
 ## utils 公共方法库
 
-utils 是一个常用方法集，也包含一些常用枚举定义
-
-```js
-import { DATE_FORMAT, getEnumObject } from "ird-design/utils";
+```
+import { DATE_FORMAT, formatterNumber } from '@ird/design/utils';
 ```
 
-### 常量
+#### 常量
 
-DATE_FORMAT： 标准日期格式，YYYY-MM-DD
+DATE_FORMAT:标准日期格式，YYYY-MM-DD
 
-DATE_TIME_FORMAT： 标准时间格式，YYYY-MM-DD HH:mm:ss
+DATE_TIME_FORMAT:标准时间格式，YYYY-MM-DD HH:mm:ss
 
-formItemLayout： 表单布局通用格式， label：wrapper = 8 ：15
+#### API
 
-### API
+awaitWrap:捕获错误
 
-isEmpty：判断输入是否是空对象或空数组
+genID:生成唯一 id
 
-getEnumObject：根据指定的枚举值和枚举数组，找出其枚举对应的数组索引
+isEmail:匹配邮箱
 
-toFormatEnums： 将后端返回的对象转化成标准的 label，value 对象数组
+isInternetURL:匹配 InternetURL
 
-throttle：节流函数
+getBLen:查看文字的长度 一个文字抵两位数字
 
-compileParam：详情跳转参数简单加密
+formatterNumber:数字千位一个逗号
 
-unCompileParam： 详情跳转参数简单解密 idCodeValid：校验身份证号码是否合法
+#### 正则表达式
 
-getSexById： 通过身份证号获取性别
+使用
 
-getAgeById： 根据身份证号码获取年龄
+```
+import {Rules, genID} from '@ird/design/utils';
+const { email } = Rules;
+```
 
-toDecimalNumber：金额数据千分位化与保留小数点后 n 位
+支持的正则有：
+
+```
+thousandNumReg: /^(-)?\d{1,3}(,\d{3})+(.\d+)?$/,// 千分位正则
+phoneReg: /^1\d{10}$/,// 手机号正则
+emojiReg: /(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f])|(\ud83d[\ude80-\udeff])/,// emoji表情的正则
+```
