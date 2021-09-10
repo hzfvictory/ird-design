@@ -5,9 +5,11 @@ const Webpackbar = require("webpackbar");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const smp = new SpeedMeasurePlugin();
+const smp = new SpeedMeasurePlugin(); // 耗时分析
+const Dotenv = require("dotenv-webpack"); // 配置 .env变量
 
 const isProd = process.env.NODE_ENV !== "development";
+const env = process.env.NODE_ENV;
 
 const config = {
   resolve: {
@@ -103,6 +105,9 @@ const config = {
     new FriendlyErrorsWebpackPlugin(),
     new webpack.DefinePlugin({
       "process.env.FAAS_ENV": JSON.stringify(process.env.FAAS_ENV),
+    }),
+    new Dotenv({
+      path: env && env !== "development" ? `./.env.${env}` : `./.env`,
     }),
     new VueLoaderPlugin(),
   ],
