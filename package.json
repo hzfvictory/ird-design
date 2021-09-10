@@ -1,13 +1,14 @@
 {
   "name": "irdd",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-beta.26",
   "main": "lib/ird-design.common",
   "typings": "types/index.d.ts",
   "files": [
     "packages",
     "lib",
     "utils",
-    "types"
+    "types",
+    "src/styles"
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development node  build/dev-server.js",
@@ -60,6 +61,7 @@
     "highlight.js": "9.18.3",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.3.6",
+    "irdd": "^1.0.0-beta.25",
     "koa": "^2.13.1",
     "koa-static": "^5.0.0",
     "markdown-it": "^12.0.4",

@@ -18,7 +18,7 @@ const components = [
   IrdModal,
 ];
 
-const install = function (Vue, opts = {}) {
+const install = function(Vue, opts = {}) {
   components.forEach((component) => {
     Vue.component(component.name, component);
   });
@@ -33,8 +33,6 @@ const install = function (Vue, opts = {}) {
 if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
-
-console.log(121212112);
 
 export default {
   install,

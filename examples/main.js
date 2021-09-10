@@ -3,9 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 
 /*start ird*/
-// import Ird from "../lib/ird-design.common";
+import Ird from "../lib/ird-design.common";
+// import Ird from "irdd";
 // import "../src/styles/lib/index.css";
-import Ird from "../src"; // 编译之前的代码
+// import Ird from "../src"; // 编译之前的代码
 import "../src/styles/src/index.scss";
 // import "./assets/styles/variables.scss"  // 自定义主题色
 Vue.use(Ird);

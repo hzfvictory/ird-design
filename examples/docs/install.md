@@ -5,7 +5,7 @@
 推荐使用 npm 的方式安装，它能更好地和 webpack 打包工具配合使用。
 
 ```js
-yarn add @ird/design
+yarn add irdd
 ```
 
 ```html
@@ -22,8 +22,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from 'components/app.vue';
 import Routers from './router.js';
-import Ird from '@ird/design';
-import 'ird-design/packages/theme-default/lib/index.css";
+import Ird from 'irdd';
+import 'irdd/packages/theme-default/lib/index.css";
 
 Vue.use(VueRouter);
 Vue.use(Ird);

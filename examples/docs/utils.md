@@ -1,7 +1,7 @@
 ## utils 公共方法库
 
 ```javascript
-import { DATE_FORMAT, formatterNumber } from "@ird/design/utils";
+import { DATE_FORMAT, formatterNumber } from "irdd/utils";
 ```
 
 #### 常量
@@ -29,7 +29,7 @@ formatterNumber:数字千位一个逗号
 使用
 
 ```javascript
-import { Rules, genID } from "@ird/design/utils";
+import { Rules, genID } from "irdd/utils";
 const { email } = Rules;
 ```
 

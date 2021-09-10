@@ -70,7 +70,7 @@ export default {
     const { styles, value, attributes, event } = this;
     return (
       <div
-        class={`ird-design_input-number ${attributes.align ? "input_number_text_center" : ""} ${this.irdSize ? "ird-design_input-number--" + this.irdSize : ""}`}>
+        class={`ird-design_input-number  ${attributes.align ? "input_number_text_center" : ""} ${this.irdSize ? "ird-design_input-number--" + this.irdSize : ""}`}>
         {this.prependTitle()}
         <el-input-number
           {...{
