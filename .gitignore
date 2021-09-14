@@ -15,3 +15,5 @@ dist
 .envrc
 upload.sh
 
+server
+build
