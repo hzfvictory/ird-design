@@ -15,7 +15,3 @@ dist
 .envrc
 upload.sh
 
- server
- packages
- src
- build
