@@ -1,3 +1,7 @@
+/*
+* 约定好  组件路径写到 index.js 处
+*/
+
 import Button from "packages/button/index.js";
 import EnhanceTable from "packages/enhanceTable/index.js";
 import InputNumber from "packages/inputNumber/index.js";
@@ -5,7 +9,6 @@ import WithSearch from "packages/withSearch/index.js";
 import IrdSelect from "packages/irdSelect/index.js";
 import IrdUpload from "packages/irdUpload/index.js";
 import IrdModal from "packages/irdModal/index.js";
-
 // import * as utils from "./utils";
 
 const components = [
