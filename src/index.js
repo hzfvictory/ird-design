@@ -1,10 +1,10 @@
 import Button from "packages/button/index.js";
-import EnhanceTable from "packages/EnhanceTable/index.js";
-import InputNumber from "packages/InputNumber/index.js";
-import WithSearch from "packages/WithSearch/index.js";
-import IrdSelect from "packages/IrdSelect/index.js";
-import IrdUpload from "packages/IrdUpload/index.js";
-import IrdModal from "packages/IrdModal/index.js";
+import EnhanceTable from "packages/enhanceTable/index.js";
+import InputNumber from "packages/inputNumber/index.js";
+import WithSearch from "packages/withSearch/index.js";
+import IrdSelect from "packages/irdSelect/index.js";
+import IrdUpload from "packages/irdUpload/index.js";
+import IrdModal from "packages/irdModal/index.js";
 
 // import * as utils from "./utils";
 

@@ -1,9 +1,9 @@
 {
-  "button": "./packages/Button/index.js",
-  "enhanceTable": "./packages/EnhanceTable/index.js",
-  "irdSelect": "./packages/IrdSelect/index.js",
-  "inputNumber": "./packages/InputNumber/index.js",
-  "irdUpload": "./packages/IrdUpload/index.js",
-  "withSearch": "./packages/WithSearch/index.js",
-  "irdModal": "./packages/IrdModal/index.js"
+  "button": "./packages/button/index.js",
+  "enhanceTable": "./packages/enhanceTable/index.js",
+  "irdSelect": "./packages/irdSelect/index.js",
+  "inputNumber": "./packages/inputNumber/index.js",
+  "irdUpload": "./packages/irdUpload/index.js",
+  "withSearch": "./packages/withSearch/index.js",
+  "irdModal": "./packages/irdModal/index.js"
 }
