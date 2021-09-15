@@ -32,32 +32,32 @@
     {
       "desc": "WithSearch 搜索框组件",
       "name": "withSearch",
-      "path": "/withSearch"
+      "path": "/with-search"
     },
     {
       "desc": "EnhanceTable Table组件",
       "name": "table",
-      "path": "/table"
+      "path": "/enhance-table"
     },
     {
       "desc": "IrdInputNumber 数字输入框",
-      "name": "inputNumber",
-      "path": "/inputNumber"
+      "name": "input-number",
+      "path": "/ird-input-number"
     },
     {
       "desc": "IrdSelect 选择器",
       "name": "select",
-      "path": "/select"
+      "path": "/ird-select"
     },
     {
-      "desc": "IrdImgUpload 上传图片",
-      "name": "imgUpload",
-      "path": "/imgUpload"
+      "desc": "Upload 上传文件",
+      "name": "upload",
+      "path": "/ird-upload"
     },
     {
       "desc": "IrdModal 对话框",
       "name": "modal",
-      "path": "/modal"
+      "path": "/ird-modal"
     },
     {
       "desc": "utils 公共方法库",

@@ -4,9 +4,7 @@
       "@babel/preset-env",
       {
         "targets": {
-          "browsers": [
-            "chrome >= 50"
-          ],
+          "browsers": ["chrome >= 50"],
           "node": "current"
         },
         "modules": false
@@ -22,6 +20,13 @@
         "corejs": false,
         "helpers": false,
         "regenerator": true
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "irdd",
+        "styleLibraryDirectory": "src/styles/lib"
       }
     ]
   ]

@@ -1,27 +1,29 @@
 /*
-* 约定好  组件路径写到 index.js 处
-*/
+ * 约定好  组件路径写到 index.js 处
+ */
 
 import Button from "packages/button/index.js";
-import EnhanceTable from "packages/enhanceTable/index.js";
-import InputNumber from "packages/inputNumber/index.js";
-import WithSearch from "packages/withSearch/index.js";
-import IrdSelect from "packages/irdSelect/index.js";
-import IrdUpload from "packages/irdUpload/index.js";
-import IrdModal from "packages/irdModal/index.js";
+import Icon from "packages/icon/index.js";
+import EnhanceTable from "packages/enhance-table/index.js";
+import IrdInputNumber from "packages/ird-input-number/index.js";
+import WithSearch from "packages/with-search/index.js";
+import IrdSelect from "packages/ird-select/index.js";
+import IrdUpload from "packages/ird-upload/index.js";
+import IrdModal from "packages/ird-modal/index.js";
 // import * as utils from "./utils";
 
 const components = [
   Button,
+  Icon,
   EnhanceTable,
-  InputNumber,
+  IrdInputNumber,
   WithSearch,
   IrdSelect,
   IrdUpload,
   IrdModal,
 ];
 
-const install = function(Vue, opts = {}) {
+const install = function (Vue, opts = {}) {
   components.forEach((component) => {
     Vue.component(component.name, component);
   });
@@ -42,8 +44,9 @@ export default {
   // utils: { utils },
   // utils, // 不在这引入了 直接使用路径
   Button,
+  Icon,
   EnhanceTable,
-  InputNumber,
+  IrdInputNumber,
   WithSearch,
   IrdSelect,
   IrdUpload,

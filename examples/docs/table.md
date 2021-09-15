@@ -452,15 +452,21 @@
         ],
       };
     },
-watch:{
-search(){
-this.queryList();
-}
-},
+    watch: {
+      search() {
+        this.queryList();
+      },
+    },
     methods: {
       async queryList() {
         const { handlePageData } = this.$refs.table;
-        handlePageData(this.data.filter(data => !this.search || data.name.toLowerCase().includes(this.search.toLowerCase())));
+        handlePageData(
+          this.data.filter(
+            (data) =>
+              !this.search ||
+              data.name.toLowerCase().includes(this.search.toLowerCase())
+          )
+        );
       },
       renderHeader(h, row) {
         const msg = this.column[row.$index - 1]?.msg || "";
