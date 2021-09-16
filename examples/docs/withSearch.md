@@ -157,6 +157,88 @@
 
 :::
 
+### 扩充组件
+
+左侧 `label` 可支持切换右侧的控件
+
+::: template 添加`enums`可使下拉框切换展示的控件， `link` 指向要展示的 from 组件，`link`里面的`key`指向控件的`key`，`resetValue`是否当前的控件切换后数据是否清除
+
+```html
+<template>
+  <with-search :searchProps="searchProps" />
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        searchProps: {
+          fields: [
+            {
+              key: "name",
+              name: "应用名称",
+            },
+            {
+              key: "changetype",
+              name: false,
+              type: "select",
+              enums: [
+                {
+                  id: 1,
+                  name: "渠道",
+                  link: {
+                    key: "channelName",
+                    placeholder: "全部渠道",
+                    resetValue: true,
+                  },
+                },
+                {
+                  id: 2,
+                  name: "渠道ID",
+                  link: {
+                    key: "channelId",
+                    placeholder: "渠道号",
+                  },
+                },
+              ],
+              defaultValue: 1, // 对应展示的id
+              clearable: false,
+              filterable: false,
+              "key-value": false,
+            },
+            {
+              key: "channelName",
+              name: false,
+              type: "select",
+              enums: this.$icon,
+              enumType: { id: "font_class", name: "name" },
+              placeholder: "全部渠道",
+            },
+            {
+              key: "channelId",
+              name: false,
+              placeholder: "渠道号",
+              hidden: true,
+              defaultValue: "",
+            },
+          ],
+          onSearch: this.handleSearch,
+          onReset: this.handleReset,
+          formData: {},
+        },
+      };
+    },
+    methods: {
+      handleSearch() {
+        console.log(this.searchProps.formData);
+      },
+      handleReset() {},
+    },
+  };
+</script>
+```
+
+:::
+
 ### WithSearch Attributes
 
 | 参数名   | 作用                                           | 类型   | 默认值 |

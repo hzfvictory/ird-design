@@ -5,14 +5,14 @@
         <h4>{{ langConfig.links }}</h4>
         <a
           class="footer-main-link"
-          href="https://github.com/hzfvictory/zy-ele-design"
+          href="https://github.com/hzfvictory/ird-design"
           target="_blank"
         >
           {{ langConfig.repo }}
         </a>
         <a
           class="footer-main-link"
-          href="https://github.com/hzfvictory/zy-ele-design/issues"
+          href="https://github.com/hzfvictory/ird-design/issues"
           target="_blank"
         >
           {{ langConfig.changelog }}

@@ -1,6 +1,5 @@
 import Vue from "vue";
 
-/*
 // 按需加载
 import {
   Button,
@@ -22,8 +21,8 @@ Vue.use(IrdModal);
 Vue.use(IrdInputNumber);
 Vue.use(IrdUpload);
 Vue.use(EnhanceTable);
-*/
 
+/*
 // 生产、开发者使用  全局引入
 // import Irdd from "irdd";
 import Irdd from "irdd/es";
@@ -32,6 +31,7 @@ import Irdd from "irdd/es";
 import "irdd/src/styles/lib/index.css";
 
 Vue.use(Irdd);
+*/
 
 /*
 * // 本地压缩

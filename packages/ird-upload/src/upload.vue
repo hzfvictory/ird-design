@@ -1,5 +1,5 @@
 <template>
-  <div class="zy-ele-design-upload">
+  <div class="ird-design-upload">
     <el-upload
       :class="value ? 'avatar-uploader avatar-success' : 'avatar-uploader'"
       :action="action"

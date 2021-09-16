@@ -1,3 +1,5 @@
 **/*.html
 package.json
-build
+es
+lib
+utils
