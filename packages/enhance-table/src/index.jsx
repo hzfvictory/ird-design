@@ -1,18 +1,9 @@
 import table from "@/mixins/table.mixins";
-import {
-  Progress,
-  Table,
-  TableColumn,
-  Popconfirm,
-  Button,
-  Pagination,
-} from "element-ui";
+import { TableColumn, Button, Pagination, Popconfirm } from "element-ui";
 
 export default {
   name: "EnhanceTable",
   components: {
-    [Progress.name]: Progress,
-    [Table.name]: Table,
     [TableColumn.name]: TableColumn,
     [Popconfirm.name]: Popconfirm,
     [Button.name]: Button,

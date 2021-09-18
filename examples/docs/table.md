@@ -1,5 +1,10 @@
 ## EnhanceTable 表格
 
+:::warning
+`@vue/babel-helper-vue-jsx-merge-props` 编译 `element-ui` 组件库 `table`的时候，内部编译导致 `dom` 丢失，
+所以使用此组件时需保证项目中有在使用 `el-table`
+:::
+
 ### 基础用法
 
 ::: template

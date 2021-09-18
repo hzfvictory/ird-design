@@ -2,12 +2,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-import "./ird";
 /* elementUI */
-import { Tooltip, Input } from "element-ui";
+import { Tooltip, Input, Table } from "element-ui";
 
 Vue.use(Tooltip);
 Vue.use(Input);
+Vue.use(Table);
 import "element-ui/lib/theme-chalk/index.css"; // 引入饿了么的样式
 /* component  start*/
 
@@ -17,6 +17,8 @@ import ClipBoard from "./components/clipboard.vue";
 Vue.component("demo-block", DemoBlock);
 Vue.component("clip-board", ClipBoard);
 /*component  end*/
+
+import "./ird";
 
 /* mixin  start*/
 import clipboard from "./mixins/clipboard";
