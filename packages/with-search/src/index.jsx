@@ -1,5 +1,5 @@
 import { Form, FormItem, DatePicker, Button, Input } from "element-ui";
-import IrdSelect from "../../ird-select";
+import IrdSelect from "../../select";
 
 export default {
   name: "WithSearch",

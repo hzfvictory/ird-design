@@ -5,22 +5,22 @@
 import Button from "packages/button/index.js";
 import Icon from "packages/icon/index.js";
 import EnhanceTable from "packages/enhance-table/index.js";
-import IrdInputNumber from "packages/ird-input-number/index.js";
+import InputNumber from "packages/input-number/index.js";
 import WithSearch from "packages/with-search/index.js";
-import IrdSelect from "packages/ird-select/index.js";
-import IrdUpload from "packages/ird-upload/index.js";
-import IrdModal from "packages/ird-modal/index.js";
+import Select from "packages/select/index.js";
+import Upload from "packages/upload/index.js";
+import Modal from "packages/modal/index.js";
 // import * as utils from "./utils";
 
 const components = [
   Button,
   Icon,
   EnhanceTable,
-  IrdInputNumber,
+  InputNumber,
   WithSearch,
-  IrdSelect,
-  IrdUpload,
-  IrdModal,
+  Select,
+  Upload,
+  Modal,
 ];
 
 const install = function (Vue, opts = {}) {
@@ -46,9 +46,9 @@ export default {
   Button,
   Icon,
   EnhanceTable,
-  IrdInputNumber,
+  InputNumber,
   WithSearch,
-  IrdSelect,
-  IrdUpload,
-  IrdModal,
+  Select,
+  Upload,
+  Modal,
 };

@@ -2,9 +2,9 @@
   "button": "./packages/button/index.js",
   "icon": "./packages/icon/index.js",
   "enhance-table": "./packages/enhance-table/index.js",
-  "ird-select": "./packages/ird-select/index.js",
-  "ird-input-number": "./packages/ird-input-number/index.js",
-  "ird-upload": "./packages/ird-upload/index.js",
+  "select": "./packages/select/index.js",
+  "input-number": "./packages/input-number/index.js",
+  "upload": "./packages/upload/index.js",
   "with-search": "./packages/with-search/index.js",
-  "ird-modal": "./packages/ird-modal/index.js"
+  "modal": "./packages/modal/index.js"
 }

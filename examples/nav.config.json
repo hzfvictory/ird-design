@@ -40,24 +40,24 @@
       "path": "/enhance-table"
     },
     {
-      "desc": "IrdInputNumber 数字输入框",
+      "desc": "InputNumber 数字输入框",
       "name": "input-number",
-      "path": "/ird-input-number"
+      "path": "/input-number"
     },
     {
-      "desc": "IrdSelect 选择器",
+      "desc": "Select 选择器",
       "name": "select",
-      "path": "/ird-select"
+      "path": "/select"
     },
     {
       "desc": "Upload 上传文件",
       "name": "upload",
-      "path": "/ird-upload"
+      "path": "/upload"
     },
     {
-      "desc": "IrdModal 对话框",
+      "desc": "Modal 对话框",
       "name": "modal",
-      "path": "/ird-modal"
+      "path": "/modal"
     },
     {
       "desc": "utils 公共方法库",

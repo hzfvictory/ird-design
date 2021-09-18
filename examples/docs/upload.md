@@ -12,7 +12,6 @@
     :action="action"
     :token="token"
     v-model="formData.imgUrl"
-    prop="imgUrl"
     :rule="{
         format: 'image/jpeg,image/jpg,image/png,image/gif',
         lt: 300, 

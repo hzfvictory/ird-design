@@ -85,29 +85,31 @@ export default {
   render() {
     const { styles, value, attributes, event } = this;
     return (
-      <div
-        class={`ird-design_input-number  ${
-          attributes.align ? "input_number_text_center" : ""
-        } ${this.irdSize ? "ird-design_input-number--" + this.irdSize : ""}`}
-      >
-        {this.prependTitle()}
-        <el-input-number
-          {...{
-            class: this.handleClass(),
-            style: styles,
-            props: {
-              size: this.irdSize,
-              value,
-              ...attributesDefault,
-              ...attributes,
-            },
-            on: {
-              ...event,
-              input: this.handleInput,
-            },
-          }}
-        />
-        {this.appendTitle()}
+      <div class={"irdd_input-number"}>
+        <div
+          class={`ird-design_input-number  ${
+            attributes.align ? "input_number_text_center" : ""
+          } ${this.irdSize ? "ird-design_input-number--" + this.irdSize : ""}`}
+        >
+          {this.prependTitle()}
+          <el-input-number
+            {...{
+              class: this.handleClass(),
+              style: styles,
+              props: {
+                size: this.irdSize,
+                value,
+                ...attributesDefault,
+                ...attributes,
+              },
+              on: {
+                ...event,
+                input: this.handleInput,
+              },
+            }}
+          />
+          {this.appendTitle()}
+        </div>
       </div>
     );
   },
