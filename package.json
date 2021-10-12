@@ -1,7 +1,10 @@
 {
   "name": "irdd",
-  "version": "1.0.0-beta.47",
+  "version": "1.0.0-rc.5",
+  "title": "Ird Design",
   "main": "lib/ird-design.common",
+  "module": "es/index.js",
+  "unpkg": "lib/ird-design.common",
   "typings": "types/index.d.ts",
   "files": [
     "packages",
@@ -31,15 +34,11 @@
       "pre-commit": "pretty-quick --staged --ignore-path=.prettierignore"
     }
   },
-  "dependencies": {
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
-    "async-validator": "^3.5.2",
-    "deepmerge": "^4.2.2",
-    "element-ui": "2.13.0",
-    "lodash.throttle": "^4.1.1",
-    "normalize-wheel": "^1.0.1",
-    "throttle-debounce": "^3.0.1",
+  "peerDependencies": {
     "vue": "^2.6.12"
+  },
+  "dependencies": {
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -58,6 +57,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.0",
     "dotenv-webpack": "^7.0.3",
+    "element-ui": "2.13.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^6.0.0",
     "file-save": "^0.2.0",
@@ -103,6 +103,14 @@
     "webpack-node-externals": "^2.5.2",
     "webpackbar": "^5.0.0-3"
   },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "IE 11",
+    "not IE 10"
+  ],
   "homepage": "http://irdd.jing999.cn:9999",
   "repository": {
     "type": "git",

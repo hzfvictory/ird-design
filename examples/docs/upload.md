@@ -1,8 +1,8 @@
-## IrdUpload 上传图片
+## IrdUpload 上传文件
 
-### 基础用法
+目前只能上传单个文件，后期将会支持多个上传，拖拽排序
 
-目前只能上传一个图片，后期将会支持多个上传，拖拽排序
+### 上传图片
 
 ::: template
 
@@ -24,11 +24,49 @@
   export default {
     data() {
       return {
-        action: "http://sspapiad.ms.zhangyue.net:8070/ssp/common/image",
+        action: "http://gdapiad.ms.zhangyue.net:8064/dsp/brand/upload/video",
         token:
-          "765dac684a5c614382b2782223f3f4d49dbf7d5d04dd168b6e606e72e6ddd27dff6030c8e5f9a2c4d33b12c4410d20f02bdb32f08ca45f98d5040e0b348e150f9e38240d865d41c5edf33b8997e8aa3dbb4f39f0ac7ecbecc963b34c7175901ce27b294bcce5ec5910df3b6fec777875e890d7d4cdd538d8ed4179c724e415aa02eac5bae8b44147",
+          "1f429c65169fefc181899718e8183726938a8f3b6e4c3a8e86b49a9fec73e9604f9a909dc284c3ae97f0f7982e9bfdc61ed7730a1b644cee8d6ce10e434992614f9388adfce07284fb3113db202d75851a0a2cf8fe34718713e257a90015f66e6aecce8c5ab72737d0599dfa5f8d35687bdbf3db2383d34200f5b0c86fe7e39d30ccb742037a576c",
         formData: {
           imgUrl: "",
+        },
+      };
+    },
+    methods: {},
+  };
+</script>
+```
+
+:::
+
+### 上传视频
+
+::: template
+
+```html
+<template>
+  <ird-upload
+    :action="action"
+    :token="token"
+    v-model="formData.videUrl"
+    :rule="{
+      format: 'video/mp4',
+      lt: 5120,
+      duration:[0,7],
+      thre:2
+     }"
+  />
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        action: "http://gdapiad.ms.zhangyue.net:8064/dsp/brand/upload/video",
+        token:
+          "1f429c65169fefc181899718e8183726938a8f3b6e4c3a8e86b49a9fec73e9604f9a909dc284c3ae97f0f7982e9bfdc61ed7730a1b644cee8d6ce10e434992614f9388adfce07284fb3113db202d75851a0a2cf8fe34718713e257a90015f66e6aecce8c5ab72737d0599dfa5f8d35687bdbf3db2383d34200f5b0c86fe7e39d30ccb742037a576c",
+        formData: {
+          videUrl: "",
         },
       };
     },
@@ -50,8 +88,10 @@
 
 ### Rule Attributes
 
-| 参数名 | 说明             | 可选值 | 默认值                                   |
-| :----- | :--------------- | :----- | :--------------------------------------- |
-| lt     | 图片的大小（kb） | -      | -                                        |
-| format | 图片的格式       | -      | image/jpeg,image/jpg,image/png,image/gif |
-| size   | 图片的尺寸       | -      | -                                        |
+| 参数名   | 说明                                   | 可选值 | 默认值                                   |
+| :------- | :------------------------------------- | :----- | :--------------------------------------- |
+| lt       | 文件的大小（kb）                       | -      | -                                        |
+| format   | 文件的格式                             | -      | image/jpeg,image/jpg,image/png,image/gif |
+| size     | 文件的尺寸                             | -      | -                                        |
+| duration | 视频的时长区间（秒）                   | -      | [0]                                      |
+| thre     | 仅视频尺寸的阈值（可在一定误差范围内） | -      | 0                                        |

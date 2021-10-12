@@ -91,9 +91,29 @@ new Vue({
 });
 ```
 
-**注意：** 当使用按需加载全量引入 irdd 会提示 no defind 的问题，解决的办法:
+**注意 1：** 当使用按需加载时全量引入 `irdd` 会提示 `no defind` 的问题，解决的办法:
 
 ```js
 import Irdd from "irdd/es";
 const Irdd = require("irdd");
+```
+
+**注意 2：** 提示类似以下错误的:
+
+![](https://tva1.sinaimg.cn/large/008i3skNly1gurubwhk7nj60su09yjss02.jpg)
+
+上述错误是因为 webpack 没有配置默认可以不写 `.css`的 extensions, 配置下即可
+
+```js
+// webpack下
+resolve: {
+ extensions: [".js", ".jsx", ".vue", ".css", ".scss", ".json", ".md"],
+}
+
+// vue-cli下
+{
+  chainWebpack: config => {
+    config.resolve.extensions.add('.css').end()
+  }
+}
 ```
