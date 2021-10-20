@@ -132,6 +132,5 @@
 | controls          | 是否使用控制按钮         | boolean | —            | true      |
 | controls-position | 控制按钮位置             | string  | right        | -         |
 | name              | 原生属性                 | string  | —            | —         |
-| label             | 输入框关联的 label 文字  | string  | —            | —         |
 | placeholder       | 输入框默认 placeholder   | string  | -            | -         |
-| align             | 文字是否居中             | string  | center       | -         |
+| **align**         | 文字是否居中             | string  | center       | -         |
