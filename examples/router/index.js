@@ -73,7 +73,7 @@ const hashPath = function () {
 const queryAllIds = function () {
   const getElementsByTagName = (ele) =>
     window.document.getElementsByTagName(ele);
-  let eleAry = ["h3", "h4", "h5", "h6"]; // markdown-loader 能设置能跳转的标签
+  let eleAry = ["h3"]; // markdown-loader 能设置能跳转的标签
   let doc = [];
   eleAry.map((ele) => {
     doc.push(...getElementsByTagName(ele));

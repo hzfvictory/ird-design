@@ -79,19 +79,19 @@
 
 ### IrdUpload Attributes
 
-| Name          | Type   | Default    | Description              |
-| :------------ | :----- | :--------- | :----------------------- |
-| action        | String | ''         | 请求接口 **必填**        |
-| token         | String | ''         | 响应头的 Authentication  |
-| value/v-model | String | -          | 当前字段                 |
-| rule          | Object | 详细看下表 | 图片大小、格式、尺寸校验 |
+| 参数名        | 说明                     | 类型   | 默认值     |
+| :------------ | :----------------------- | :----- | :--------- |
+| action        | 请求接口 **必填**        | String | ''         |
+| token         | 响应头的 Authentication  | String | ''         |
+| value/v-model | 当前字段                 | String | -          |
+| rule          | 图片大小、格式、尺寸校验 | Object | 详细看下表 |
 
 ### Rule Attributes
 
-| 参数名   | 说明                                   | 可选值 | 默认值                                   |
-| :------- | :------------------------------------- | :----- | :--------------------------------------- |
-| lt       | 文件的大小（kb）                       | -      | -                                        |
-| format   | 文件的格式                             | -      | image/jpeg,image/jpg,image/png,image/gif |
-| size     | 文件的尺寸                             | -      | -                                        |
-| duration | 视频的时长区间（秒）                   | -      | [0]                                      |
-| thre     | 仅视频尺寸的阈值（可在一定误差范围内） | -      | 0                                        |
+| 参数名   | 说明                                     | 类型                         | 默认值                                   |
+| :------- | :--------------------------------------- | :--------------------------- | :--------------------------------------- |
+| lt       | 文件的大小 「kb」                        | Number                       | -                                        |
+| format   | 文件的格式                               | String                       | image/jpeg,image/jpg,image/png,image/gif |
+| size     | 文件的尺寸                               | Number                       | -                                        |
+| duration | 视频的时长区间「秒」                     | Array `[min-time, max-time]` | [0]                                      |
+| thre     | 仅视频尺寸的阈值「可允许一定的范围误差」 | Number                       | 0                                        |

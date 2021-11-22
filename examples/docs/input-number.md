@@ -110,7 +110,7 @@
 
 ### IrdInputNumber Attributes
 
-| Name       | Type   | Default     | Description                                                                                         |
+| 参数       | 类型   | 默认        | 说明                                                                                                |
 | :--------- | :----- | :---------- | :-------------------------------------------------------------------------------------------------- |
 | v-model    | Number | undefined   | v-model                                                                                             |
 | attributes | Object | {}          | 当前的属性,[同 element-ui](https://element.eleme.cn/2.14/#/zh-CN/component/input-number#attributes) |
@@ -122,15 +122,15 @@
 
 | 参数              | 说明                     | 类型    | 可选值       | 默认      |
 | :---------------- | :----------------------- | :------ | :----------- | :-------- |
-| min               | 设置计数器允许的最小值   | number  | —            | -Infinity |
-| max               | 设置计数器允许的最大值   | number  | —            | Infinity  |
-| step              | 计数器步长               | number  | —            | 1         |
-| step-strictly     | 是否只能输入 step 的倍数 | boolean | —            | false     |
-| precision         | 数值精度                 | number  | —            | —         |
-| size              | 计数器尺寸               | string  | large, small | —         |
-| disabled          | 是否禁用计数器           | boolean | —            | false     |
-| controls          | 是否使用控制按钮         | boolean | —            | true      |
-| controls-position | 控制按钮位置             | string  | right        | -         |
-| name              | 原生属性                 | string  | —            | —         |
-| placeholder       | 输入框默认 placeholder   | string  | -            | -         |
-| **align**         | 文字是否居中             | string  | center       | -         |
+| min               | 设置计数器允许的最小值   | Number  | —            | -Infinity |
+| max               | 设置计数器允许的最大值   | Number  | —            | Infinity  |
+| step              | 计数器步长               | Number  | —            | 1         |
+| step-strictly     | 是否只能输入 step 的倍数 | Boolean | —            | false     |
+| precision         | 数值精度                 | Number  | —            | —         |
+| size              | 计数器尺寸               | String  | large, small | —         |
+| disabled          | 是否禁用计数器           | Boolean | —            | false     |
+| controls          | 是否使用控制按钮         | Boolean | —            | true      |
+| controls-position | 控制按钮位置             | String  | right        | -         |
+| name              | 原生属性                 | String  | —            | —         |
+| placeholder       | 输入框默认 placeholder   | String  | -            | -         |
+| **align**         | 文字是否居中             | String  | center       | -         |

@@ -162,7 +162,7 @@
 
 ### IrdSelect Attributes
 
-| Name                | Type                          | Default                   | Description                                  |
+| 参数名              | 类型                          | 默认值                    | 说明                                         |
 | :------------------ | :---------------------------- | :------------------------ | :------------------------------------------- |
 | v-model             | String, Number, Array, Object | ''                        | v-model                                      |
 | data                | Array                         | []                        | 当前的数据                                   |

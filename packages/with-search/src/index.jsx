@@ -103,10 +103,10 @@ export default {
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <el-date-picker
             size={this.irdSize}
-            key={item.key + item.dataType}
+            key={item.key + (item.dataType || item.dateType)}
             style={{ width: "220px", ...item.styles }}
             v-model={this.searchData[item.key]}
-            type={item.dataType || "daterange"}
+            type={item.dataType || item.dateType || "daterange"}
             range-separator="至"
             start-placeholder="开始日期"
             end-placeholder="结束日期"

@@ -212,24 +212,25 @@
 
 ### IrdModal Attributes
 
-| visible               | 是否显示 Modal，支持 .sync 修饰符                                           | boolean                             | —   | false |
-| --------------------- | --------------------------------------------------------------------------- | ----------------------------------- | --- | ----- |
-| title                 | Modal 的标题，也可通过具名 slot （见下表）传入                              | string                              | —   | —     |
-| width                 | Modal 的宽度                                                                | string                              | —   | 50%   |
-| fullscreen            | 是否为全屏 Modal                                                            | boolean                             | —   | false |
-| top                   | Modal CSS 中的 margin-top 值                                                | string                              | —   | 15vh  |
-| modal                 | 是否需要遮罩层                                                              | boolean                             | —   | true  |
-| modal-append-to-body  | 遮罩层是否插入至 body 元素上，若为 false，则遮罩层会插入至 Modal 的父元素上 | boolean                             | —   | true  |
-| append-to-body        | Modal 自身是否插入至 body 元素上。嵌套的 Modal 必须指定该属性并赋值为 true  | boolean                             | —   | false |
-| lock-scroll           | 是否在 Modal 出现时将 body 滚动锁定                                         | boolean                             | —   | true  |
-| custom-class          | Modal 的自定义类名                                                          | string                              | —   | —     |
-| close-on-click-modal  | 是否可以通过点击 modal 关闭 Modal                                           | boolean                             | —   | true  |
-| close-on-press-escape | 是否可以通过按下 ESC 关闭 Modal                                             | boolean                             | —   | true  |
-| show-close            | 是否显示关闭按钮                                                            | boolean                             | —   | true  |
-| before-close          | 关闭前的回调，会暂停 Modal 的关闭                                           | function(done)，done 用于关闭 Modal | —   | —     |
-| before-modal-close    | 关闭前的回调，会暂停 Modal 的关闭                                           | 使用 promise                        | —   | —     |
-| center                | 是否对头部和底部采用居中布局                                                | boolean                             | —   | false |
-| destroy-on-close      | 关闭时销毁 Modal 中的元素                                                   | boolean                             | —   | false |
+| 参数名                | 说明                                                                        | 类型                                | 可选值 | 默认值 |
+| :-------------------- | :-------------------------------------------------------------------------- | :---------------------------------- | :----- | :----- |
+| visible               | 是否显示 Modal，支持 .sync 修饰符                                           | Boolean                             | —      | false  |
+| title                 | Modal 的标题，也可通过具名 slot （见下表）传入                              | String                              | —      | —      |
+| width                 | Modal 的宽度                                                                | String                              | —      | 50%    |
+| fullscreen            | 是否为全屏 Modal                                                            | Boolean                             | —      | false  |
+| top                   | Modal CSS 中的 margin-top 值                                                | String                              | —      | 15vh   |
+| modal                 | 是否需要遮罩层                                                              | Boolean                             | —      | true   |
+| modal-append-to-body  | 遮罩层是否插入至 body 元素上，若为 false，则遮罩层会插入至 Modal 的父元素上 | Boolean                             | —      | true   |
+| append-to-body        | Modal 自身是否插入至 body 元素上。嵌套的 Modal 必须指定该属性并赋值为 true  | Boolean                             | —      | false  |
+| lock-scroll           | 是否在 Modal 出现时将 body 滚动锁定                                         | Boolean                             | —      | true   |
+| custom-class          | Modal 的自定义类名                                                          | String                              | —      | —      |
+| close-on-click-modal  | 是否可以通过点击 modal 关闭 Modal                                           | Boolean                             | —      | true   |
+| close-on-press-escape | 是否可以通过按下 ESC 关闭 Modal                                             | Boolean                             | —      | true   |
+| show-close            | 是否显示关闭按钮                                                            | Boolean                             | —      | true   |
+| before-close          | 关闭前的回调，会暂停 Modal 的关闭                                           | function(done)，done 用于关闭 Modal | —      | —      |
+| before-modal-close    | 关闭前的回调，会暂停 Modal 的关闭                                           | 使用 Promise                        | —      | —      |
+| center                | 是否对头部和底部采用居中布局                                                | Boolean                             | —      | false  |
+| destroy-on-close      | 关闭时销毁 Modal 中的元素                                                   | Boolean                             | —      | false  |
 
 ### Slot
 

@@ -509,9 +509,9 @@
 
 ### EnhanceTable Attributes
 
-| Name                  | Type    | Default | Description                                                                                       |
-| :-------------------- | :------ | :------ | :------------------------------------------------------------------------------------------------ |
-| otherTableParams      | Object  | ...     | 列表参数集合                                                                                      |
-| otherPaginationParams | Object  | ...     | 分页参数集合                                                                                      |
-| tableColumn           | Array   | []      | 列表 column 数据 **必须写在 data 里面 或者单独抽离一个 mixins,不会找不到 h 函数，获取不到上下文** |
-| multiple              | Boolean | false   | 列表是否支持多选                                                                                  |
+| 参数名                | 说明                                                                                                   | 类型    | 默认值    | 可选值                                                                                   |
+| :-------------------- | :----------------------------------------------------------------------------------------------------- | :------ | :-------- | ---------------------------------------------------------------------------------------- |
+| otherTableParams      | 列表参数集合                                                                                           | Object  | { // ...} | [兼容 element](https://element.eleme.cn/#/zh-CN/component/table#table-attributes)        |
+| otherPaginationParams | 分页参数集合「少于十条默认没有分页」                                                                   | Object  | {// ...}  | [兼容 element](https://element.eleme.cn/#/zh-CN/component/pagination#attributes)         |
+| tableColumn           | 列表 column 数据 **必须写在 data 里面或者单独抽离一个 mixins <br/> 不然找不到 h 函数，获取不到上下文** | Array   | []        | [兼容 element](https://element.eleme.cn/#/zh-CN/component/table#table-column-attributes) |
+| multiple              | 列表是否支持多选                                                                                       | Boolean | false     | false/true                                                                               |

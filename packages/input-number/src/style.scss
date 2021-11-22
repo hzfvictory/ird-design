@@ -8,6 +8,12 @@
     justify-content: flex-start;
     align-items: center;
 
+    .input_number_text_left {
+      .el-input__inner {
+        text-align: left;
+      }
+    }
+
     .input_border_right_none {
       .el-input__inner {
         border-top-right-radius: 0;
@@ -63,16 +69,10 @@
   }
 }
 
-.input_number_text_left {
-  .el-input__inner {
-    text-align: left;
-  }
-}
-
 .input_number_text_center {
   .input_number_text_left {
     .el-input__inner {
-      text-align: center;
+      text-align: center !important;
     }
   }
 }
