@@ -1,12 +1,12 @@
 /* 常用常量 */
 export const PAGEPARAMS = {
   pageSize: 1000, //每页显示多少条
-  pageNum: 1 //当前页数
+  pageNum: 1, //当前页数
 };
-export const STARTTIME = '00:00:00'
-export const ENDTIME = '23:59:59'
-export const DATE_FORMAT = 'YYYY-MM-DD';
-export const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
+export const STARTTIME = "00:00:00";
+export const ENDTIME = "23:59:59";
+export const DATE_FORMAT = "YYYY-MM-DD";
+export const DATE_TIME_FORMAT = "YYYY-MM-DD HH:mm:ss";
 
 /**
  * 捕获错误
@@ -15,22 +15,22 @@ export const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
 export const awaitWrap = (promise) => {
   return promise
     .then(data => [null, data])
-    .catch(err => [err, null])
-}
+    .catch(err => [err, null]);
+};
 /**
  * 生成唯一id
  * @param  {number} length 数值越大重复的几率越低  用默认值即可
  */
 export const genID = (length = 3) => {
   return Number(Math.random().toString().substr(3, length) + Date.now()).toString(16);
-}
+};
 
 /**
  * 匹配邮箱
  * @param  {string} email 邮箱的url
  */
 export function isEmail(email) {
-  const reg = new RegExp('^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$');
+  const reg = new RegExp("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
   return reg.test(email);
 }
 
@@ -39,7 +39,7 @@ export function isEmail(email) {
  * @param  {string} url InternetURL的url
  */
 export function isInternetURL(url) {
-  const reg = new RegExp('[a-zA-z]+://[^\\s]*');
+  const reg = new RegExp("[a-zA-z]+://[^\\s]*");
   return reg.test(url);
 }
 
@@ -61,10 +61,10 @@ export const formatterNumber = (num, val = 2) => {
   if (Rules.thousandNumReg.test(num)) return num; // 如果后台已经转化为千分位，前端不做处理直接返回
   let nwe_num = parseFloat(num, 10); // 转数字操作
   if (isNaN(nwe_num)) return num; // 防止是NaN
-  const [integer, decimal = ''] = nwe_num.toLocaleString().split('.');
+  const [integer, decimal = ""] = nwe_num.toLocaleString().split(".");
 
   if (val === 0) return integer;
-  return integer + '.' + decimal.padEnd(val, '0');
+  return integer + "." + decimal.padEnd(val, "0");
 };
 
 /* 正则 */
@@ -72,14 +72,15 @@ export const Rules = {
   thousandNumReg: /^(-)?\d{1,3}(,\d{3})+(.\d+)?$/,// 千分位正则
   phoneReg: /^1\d{10}$/,// 手机号正则
   emojiReg: /(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f])|(\ud83d[\ude80-\udeff])/,// emoji表情的正则
-}
+};
 
 /**
  * 保留两位小数
  * @param val 需要进行操作的数字
+ * @param position 为空占位用
  */
 export const returnFloat = (val = 0, position) => {
-  if ((val == undefined || val == 'null') && position) {
+  if ((val == undefined || val == "null") && position) {
     return position;
   }
   val = val || 0;
@@ -97,6 +98,7 @@ export const returnFloat = (val = 0, position) => {
 };
 
 /**
+ * 历史遗留 v1.0rc10 之后不建议用
  * with-router item的 enums 赋值问题  不使用索引，防止日后更改
  * @param fields 当前搜索项
  * @param key 搜索项查到当前的key
@@ -111,6 +113,36 @@ export const changeFields = (fields, key, data) => {
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].key === key) {
       fields[i].enums = data;
+      break;
+    }
+  }
+};
+
+/**
+ * with-router item 的 enums 赋值问题  不使用索引，防止日后更改
+ * @param fields 当前搜索项
+ * @param key 搜索项查到当前的key
+ * @param opt 1、格式为数组直接赋值 enums 2、格式为对象 key 是当前 fields 的任意一项，value 是赋值内容， 3、为空表示获取当前的 fields
+ */
+export const handleFields = (fields, key, opt) => {
+  if (!opt) return fields.find((item) => item.key === key); // 默认获取当前搜索项
+  let data;
+  if (Object.prototype.toString.call(opt).slice(8, -1) === "Object" && opt.key) {
+    data = {
+      key: opt.key || "enums",
+      value: opt.value,
+    };
+  } else {
+    data = {
+      key: "enums",
+      value: opt?.value || opt,
+    };
+  }
+
+  if (!fields.length) return;
+  for (let i = 0; i < fields.length; i++) {
+    if (fields[i].key === key) {
+      fields[i][data.key] = data.value;
       break;
     }
   }

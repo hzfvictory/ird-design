@@ -16,11 +16,11 @@
           ? item.disabled
           : item[type['id']] === disId
       "
-      :label="item[type['name']]"
+      :label="renderSelfValue(item[type['id']],item[type['name']])"
       :value="item[type['id']]"
       :key="item[type['id']] + '--' + index"
     >
-      {{ renderLabel(item[type["id"]], item[type["name"]], keyValue) }}
+      {{ renderSelfLabel(item[type['id']], item[type['name']], keyValue) }}
     </el-option>
   </el-select>
 </template>
@@ -91,6 +91,8 @@
           };
         },
       },
+      renderValue: Function,
+      renderLabel: Function,
     },
     computed: {
       delProps() {
@@ -106,7 +108,12 @@
       },
     },
     methods: {
-      renderLabel(id, val, all) {
+      renderSelfValue(id, val) {
+        if (this.renderValue) return this.renderValue(id, val);
+        return val;
+      },
+      renderSelfLabel(id, val, all) {
+        if (this.renderLabel) return this.renderLabel(id, val);
         if (all) {
           return id + "一" + val;
         }

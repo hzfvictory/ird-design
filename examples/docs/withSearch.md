@@ -61,7 +61,7 @@
 
 ```html
 <template>
-  <with-search :searchProps="searchProps">
+  <with-search :searchProps="searchProps" ref="search">
     <template slot="search" slot-scope="scope">
       <ird-button
         type="primary"
@@ -120,7 +120,7 @@
               key: "mediaId",
               name: "字体图标",
               type: "select",
-              enums: this.$icon,
+              enums: [],
               enumType: { id: "font_class", name: "name" },
               clearable: false,
               defaultValue: [],
@@ -157,6 +157,9 @@
       handleSearch() {},
       handleReset() {},
     },
+    mounted() {
+       this.$refs.search.handleFields('mediaId', this.$icon );
+    }
   };
 </script>
 ```
@@ -285,5 +288,12 @@
 
 | 参数名                                                                                       | 说明         | 可选值/类型                                                                                | 默认值    |
 | :------------------------------------------------------------------------------------------- | :----------- | :----------------------------------------------------------------------------------------- | :-------- |
-| <del>dataType <b><del>v1.0.0-rc.10</del></b> 后，不建议使用 改用</del> <br/> <b>dateType</b> | 时间显示类型 | year/month/date/dates/ week/datetime/datetimerange/ **daterange**/monthrange               | daterange |
+| <del>dataType <b><del>v1.0.0-rc.10</del></b> 后，不建议使用 改用</del> <br/> <b>dateType  </b> `v1.0.0-rc.11` | 时间显示类型 | year/month/date/dates/ week/datetime/datetimerange/ **daterange**/monthrange               | daterange |
 | pickerOptions                                                                                | 时间格式     | Object [同 element](https://element.eleme.cn/#/zh-CN/component/date-picker#picker-options) | -         |
+
+### WithSearch Methods
+
+| 方法名                    | 说明                     | 参数                                                       |
+| :------------------------ | :----------------------- | :----------------------------------------------------------- |
+| handleFields `v1.0.0-rc.11` | 便于动态更改 `fields` 各项的数据 | Function(key: string, options?: array \| object) <br/> **key**  fields各项的key<br /> **options**  <br/> 1、格式为数组直接覆盖enums <br />2、格式为对象 key 可以是所有参数名，value 是赋值内容，<br /> 3、为空表示获取当前的fields集合 |
+

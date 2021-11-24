@@ -109,6 +109,54 @@
 
 :::
 
+
+### 自定义选项标签
+
+::: template
+
+```html
+<template>
+  <div>
+    自定义选项标签文字
+   <ird-select
+       v-model="formData.value1"
+       :data="[{id:1,name:'朝花夕拾'},{id:2,name:'骆驼祥子'}]"
+       placeholder="请选择"
+       :render-value="renderValue"
+     />
+
+    自定义下拉框标签文字
+    <ird-select
+        v-model="formData.value2"
+        :data="[{id:1,name:'朝花夕拾'},{id:2,name:'骆驼祥子'}]"
+        placeholder="请选择"
+        :render-label="renderValue"
+      />
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        formData: {
+          value1: 1,
+          value2: "",
+        },
+      };
+    },
+    methods: {
+      renderValue(id) {
+          let bookAry = {1:'朝花夕拾-鲁迅',2:'骆驼祥子-老舍'}
+         return `${bookAry[id]}`;
+       },
+    },
+  };
+</script>
+```
+
+:::
+
+
 ### 有禁用选项
 
 ::: template `dis-id` 只能禁用单个项的 item,多个的话在 data 里面添加 `disabled`
@@ -178,5 +226,7 @@
 | disabled            | Boolean                       | false                     | 同上 兼容老版                                |
 | placeholder         | String                        | 全部                      | placeholder                                  |
 | <del>styles</del>   | Object x                      | { width: '161px'}         | 添加样式「不建议使用」，vue 支持直接设置     |
-| onFocus/focus       | Function                      | (event: Event)            | 失去焦点的事件                               |
+| render-value        | Function(id: string, name:string)                        | 选项的标签            | 自定义选项标签的文字                             |
+| render-label        | Function(id: string, name:string)                      | 选项的标签      | 自定义下拉框标签的文字                               |
+| onFocus/focus       |     Function                 | (event: Event)            | 失去焦点的事件                               |
 | onChange/change     | Function                      | 目前的选中值              | 选中值发生变化时触发                         |

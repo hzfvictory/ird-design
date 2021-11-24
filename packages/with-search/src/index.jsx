@@ -1,5 +1,6 @@
 import { Form, FormItem, DatePicker, Button, Input } from "element-ui";
 import IrdSelect from "../../select";
+import { handleFields } from "@/utils/index";
 
 export default {
   name: "WithSearch",
@@ -10,9 +11,9 @@ export default {
 
     // 下面循环赋值的时候，一定要拷贝一份，不然响应的是之前的老数据
     fields.length &&
-      [...searchProps.fields].map((item) => {
-        searchData[item.key] = item.defaultValue || undefined;
-      });
+    [...searchProps.fields].map((item) => {
+      searchData[item.key] = item.defaultValue || undefined;
+    });
     return { searchData };
   },
   components: {
@@ -30,12 +31,15 @@ export default {
     },
     searchProps: {
       type: Object,
-      default: function () {
+      default: function() {
         return {};
       },
     },
   },
   methods: {
+    handleFields(key, options) {
+     return handleFields(this.searchProps.fields, key, options);
+    },
     typeInput(item) {
       // style={{display: item.hidden ? 'none' : 'inline-block'}}  只能用 display:none，v-if会导致表单重置失效
       return (
@@ -237,10 +241,10 @@ export default {
           <div class="searchBtn" style="float: right">
             {this.$scopedSlots.search
               ? this.$scopedSlots.search({
-                  handleSearch: this.handleSearch,
-                  handleReset: this.handleReset,
-                  formData: this.searchData,
-                })
+                handleSearch: this.handleSearch,
+                handleReset: this.handleReset,
+                formData: this.searchData,
+              })
               : this.typeSearchBtn()}
           </div>
         </el-form>

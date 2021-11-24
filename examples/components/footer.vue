@@ -12,7 +12,7 @@
         </a>
         <a
           class="footer-main-link"
-          href="https://github.com/hzfvictory/ird-design/issues"
+          href="https://github.com/hzfvictory/ird-design/tags"
           target="_blank"
         >
           {{ langConfig.changelog }}
@@ -23,7 +23,7 @@
       <div class="footer-main">
         <h4>{{ langConfig.community }}</h4>
         <a class="footer-main-link" target="_blank">{{ langConfig.gitter }}</a>
-        <a class="footer-main-link" target="_blank">
+        <a class="footer-main-link" target="_blank" href="https://github.com/hzfvictory/ird-design/issues">
           {{ langConfig.feedback }}
         </a>
         <a class="footer-main-link" target="_blank">
