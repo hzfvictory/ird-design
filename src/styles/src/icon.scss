@@ -28,6 +28,10 @@
   }
 }
 
+.ird-icon-github:before {
+  content: "\e602";
+}
+
 .ird-icon-frown:before {
   content: "\e77e";
 }
@@ -168,10 +172,6 @@
   content: "\e6f6";
 }
 
-.ird-icon-emoji:before {
-  content: "\e6f7";
-}
-
 .ird-icon-delete:before {
   content: "\e6f8";
 }
@@ -194,10 +194,6 @@
 
 .ird-icon-flashlight:before {
   content: "\e6fd";
-}
-
-.ird-icon-flip:before {
-  content: "\e6fe";
 }
 
 .ird-icon-fullscreen:before {
@@ -420,10 +416,6 @@
   content: "\e73e";
 }
 
-.ird-icon-search-solid:before {
-  content: "\e742";
-}
-
 .ird-icon-publishgoods:before {
   content: "\e746";
 }
@@ -444,32 +436,16 @@
   content: "\e74a";
 }
 
-.ird-icon-wangwang:before {
-  content: "\e74b";
-}
-
 .ird-icon-financial:before {
   content: "\e74c";
-}
-
-.ird-icon-marketing:before {
-  content: "\e74d";
 }
 
 .ird-icon-shake:before {
   content: "\e74e";
 }
 
-.ird-icon-decoration:before {
-  content: "\e74f";
-}
-
 .ird-icon-supply:before {
   content: "\e760";
-}
-
-.ird-icon-tools:before {
-  content: "\e762";
 }
 
 .ird-icon-int:before {

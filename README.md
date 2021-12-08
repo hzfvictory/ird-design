@@ -4,11 +4,11 @@ irdd 是源于日常中后台系统开发不断的积累，让 element 使用更
 
 ## 使用文档
 
-[文档地址](http://irdd.jing9999.cn:9999), 文档快速成长期 ![img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy96RUNBZGdqWGZhcTlEalVnNnQybUhUVmROVGVlS2M1bXc4WU5qellTU2ljOGliZzdtZE11ZzhLM1U1eGliUDh0S3VYNGY4YmZYaWJkeVFCTFZnaWNsNzVIQnJBLzY0MA?x-oss-process=image/format,png)
+[文档地址](http://irdd.jing9999.cn:9999), 文档快速完善中...
 
 ## 安装
 
-irdd 是一个多包的项目，组件与方法分离，依赖于 vue 环境与 element 组件库，支持 treeShaking。
+irdd 是一个多包的项目，组件与方法分离，依赖于 vue 环境与 element 组件库，支持 treeShaking。 [img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy96RUNBZGdqWGZhcTlEalVnNnQybUhUVmROVGVlS2M1bXc4WU5qellTU2ljOGliZzdtZE11ZzhLM1U1eGliUDh0S3VYNGY4YmZYaWJkeVFCTFZnaWNsNzVIQnJBLzY0MA?x-oss-process=image/format,png)
 
 **安装包**
 

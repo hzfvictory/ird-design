@@ -1,6 +1,6 @@
 {
   "name": "irdd",
-  "version": "1.0.0-rc.11",
+  "version": "1.0.0-rc.12",
   "title": "Ird Design",
   "main": "lib/ird-design.common",
   "module": "es/index.js",
@@ -57,7 +57,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.0",
     "dotenv-webpack": "^7.0.3",
-    "element-ui": "2.13.0",
+    "element-ui": "2.14.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^6.0.0",
     "file-save": "^0.2.0",

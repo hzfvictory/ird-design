@@ -14,21 +14,21 @@ export default {
     otherTableParams: {
       // 设置table其他参数
       type: Object,
-      default: function () {
+      default: function() {
         return {};
       },
     },
     otherPaginationParams: {
       // 设置分页其他参数
       type: Object,
-      default: function () {
+      default: function() {
         return {};
       },
     },
     tableColumn: {
       // table的column
       type: Array,
-      default: function () {
+      default: function() {
         return [];
       },
     },
@@ -60,7 +60,9 @@ export default {
                 icon="el-icon-info"
                 iconColor="#f56c6c"
                 title={item.confirmTip || "是否继续操作"}
-                on-onConfirm={() => item.cb && item.cb(record)}
+                on={{
+                  confirm: () => item.cb && item.cb(record),
+                }}
                 scopedSlots={{
                   reference: () => {
                     return (
@@ -101,7 +103,8 @@ export default {
     //   this.$emit('currentChange', val);
     // },
   },
-  mounted() {},
+  mounted() {
+  },
   render() {
     const {
       tableOptions,

@@ -3,11 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 
 /* elementUI */
-import { Tooltip, Input, Table } from "element-ui";
+import { Tooltip, Input, Table, Popconfirm } from "element-ui";
 
 Vue.use(Tooltip);
 Vue.use(Input);
 Vue.use(Table);
+Vue.use(Popconfirm);
 import "element-ui/lib/theme-chalk/index.css"; // 引入饿了么的样式
 /* component  start*/
 

@@ -26,6 +26,8 @@
     components: {
       IrdHeader,
     },
+    methods: {
+    },
   };
 </script>
 <style lang="scss" scoped>

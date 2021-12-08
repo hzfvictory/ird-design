@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "18789786",
+      "name": "Logo GitHub",
+      "font_class": "github",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "4765726",
       "name": "frown",
       "font_class": "frown",
@@ -251,13 +258,6 @@
       "unicode_decimal": 59126
     },
     {
-      "icon_id": "7008926",
-      "name": "emoji_fill",
-      "font_class": "emoji",
-      "unicode": "e6f7",
-      "unicode_decimal": 59127
-    },
-    {
       "icon_id": "7008929",
       "name": "empty_fill",
       "font_class": "delete",
@@ -298,13 +298,6 @@
       "font_class": "flashlight",
       "unicode": "e6fd",
       "unicode_decimal": 59133
-    },
-    {
-      "icon_id": "7008940",
-      "name": "flip_fill",
-      "font_class": "flip",
-      "unicode": "e6fe",
-      "unicode_decimal": 59134
     },
     {
       "icon_id": "7008941",
@@ -692,13 +685,6 @@
       "unicode_decimal": 59198
     },
     {
-      "icon_id": "7009043",
-      "name": "search fill",
-      "font_class": "search-solid",
-      "unicode": "e742",
-      "unicode_decimal": 59202
-    },
-    {
       "icon_id": "7009045",
       "name": "publish goods_fill",
       "font_class": "publishgoods",
@@ -734,25 +720,11 @@
       "unicode_decimal": 59210
     },
     {
-      "icon_id": "7009050",
-      "name": "wangwang_fill",
-      "font_class": "wangwang",
-      "unicode": "e74b",
-      "unicode_decimal": 59211
-    },
-    {
       "icon_id": "7009051",
       "name": "financial_fill",
       "font_class": "financial",
       "unicode": "e74c",
       "unicode_decimal": 59212
-    },
-    {
-      "icon_id": "7009052",
-      "name": "marketing_fill",
-      "font_class": "marketing",
-      "unicode": "e74d",
-      "unicode_decimal": 59213
     },
     {
       "icon_id": "7009053",
@@ -762,25 +734,11 @@
       "unicode_decimal": 59214
     },
     {
-      "icon_id": "7009054",
-      "name": "decoration_fill",
-      "font_class": "decoration",
-      "unicode": "e74f",
-      "unicode_decimal": 59215
-    },
-    {
       "icon_id": "7009058",
       "name": "supply",
       "font_class": "supply",
       "unicode": "e760",
       "unicode_decimal": 59232
-    },
-    {
-      "icon_id": "7009059",
-      "name": "tools",
-      "font_class": "tools",
-      "unicode": "e762",
-      "unicode_decimal": 59234
     },
     {
       "icon_id": "7009060",

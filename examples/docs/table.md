@@ -76,7 +76,7 @@
 
 ### 多选-排序-操作
 
-::: template
+::: template `popconfirm` 在 `elementui v2.14.0`前后执行函数不一致。 若使用`enhance-table`提供的`confirm`需保持`elementui`版本在`v2.14.0`及以后的版本
 
 ```html
 <template>
@@ -162,6 +162,10 @@
       },
       seeHandle(...options) {
         console.log(options, "查看");
+      },
+      remove(...options) {
+        alert('删除')
+        console.log(options, "删除");
       },
     },
     created() {
