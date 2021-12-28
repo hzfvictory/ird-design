@@ -1,20 +1,33 @@
 import { Form, FormItem, DatePicker, Button, Input } from "element-ui";
 import IrdSelect from "../../select";
 import { handleFields } from "@/utils/index";
+import qs from "querystring";
 
 export default {
   name: "WithSearch",
   data() {
     let searchData = {};
+    let resetSearchData = {}; // 重置的data
     const searchProps = this.searchProps || {}; // 兼容老版本
     const { fields = [] } = searchProps;
+
+    let query = window.location.href.split("?")[1];
+    let searchParams = {};
+
+    if (this.roam) { // 开启数据漫游
+      // let searchQuery = query ? qs.parse(query) : {};
+      let searchQuery = query ? qs.parse(query) : {};
+      searchParams = JSON.parse(searchQuery.searchParams || "{}") || {};
+    }
 
     // 下面循环赋值的时候，一定要拷贝一份，不然响应的是之前的老数据
     fields.length &&
     [...searchProps.fields].map((item) => {
-      searchData[item.key] = item.defaultValue || undefined;
+      searchData[item.key] = searchParams[item.key] || item.defaultValue || undefined;
+      resetSearchData[item.key] = item.defaultValue || undefined;
     });
-    return { searchData };
+
+    return { searchData, resetSearchData, searchParams };
   },
   components: {
     [Form.name]: Form,
@@ -35,10 +48,17 @@ export default {
         return {};
       },
     },
+    roam: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
-    handleFields(key, options) {
-     return handleFields(this.searchProps.fields, key, options);
+    handleFields(key, options) { // 便于动态更改 `fields` 各项的数据
+      return handleFields(this.searchProps.fields, key, options);
+    },
+    searchQuery() { // 获取query的数据
+      return this.searchParams;
     },
     typeInput(item) {
       // style={{display: item.hidden ? 'none' : 'inline-block'}}  只能用 display:none，v-if会导致表单重置失效
@@ -166,6 +186,11 @@ export default {
       const {
         searchProps: { onSearch },
       } = this;
+      if (this.roam) {
+        // let form = qs.stringify(this.searchData); // 这种方案number直接转为string
+        let form = qs.stringify({ searchParams: JSON.stringify(this.searchData) });
+        window.history.pushState({ form }, form, window.location.href.split("?")[0] + `?${form}`);
+      }
       onSearch && onSearch(this.searchData);
       // this.$emit('search', this.searchData)
     },
@@ -173,10 +198,10 @@ export default {
       const {
         searchProps: { onReset },
       } = this;
-      this.$refs["formData"].resetFields();
-      // this.searchData = {};
+      this.roam ? this.searchData = { ...this.resetSearchData } : this.$refs["formData"].resetFields();
       this.$nextTick(() => {
         onReset && onReset();
+        this.roam && window.history.pushState(null, null, window.location.href.split("?")[0]);
       });
     },
     changeFormDom(val, item) {

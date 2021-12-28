@@ -519,3 +519,10 @@
 | otherPaginationParams | 分页参数集合「少于十条默认没有分页」                                                                   | Object  | {// ...}  | [兼容 element](https://element.eleme.cn/#/zh-CN/component/pagination#attributes)         |
 | tableColumn           | 列表 column 数据 **必须写在 data 里面或者单独抽离一个 mixins <br/> 不然找不到 h 函数，获取不到上下文** | Array   | []        | [兼容 element](https://element.eleme.cn/#/zh-CN/component/table#table-column-attributes) |
 | multiple              | 列表是否支持多选                                                                                       | Boolean | false     | false/true                                                                               |
+
+### EnhanceTable Methods
+
+| 方法名   | 说明                 | 参数                                                         |
+| :------- | :------------------- | :----------------------------------------------------------- |
+| tableRef | elementui 静态方法名 | 同 [elementui](https://element.eleme.cn/2.14/#/zh-CN/component/table#table-methods) |
+
