@@ -57,7 +57,7 @@
 
 ### 插槽
 
-::: template
+::: template scope 提供 `handleSearch、handleReset、 formData` 可以自定义插槽复用查询和重置的逻辑
 
 ```html
 <template>
@@ -158,8 +158,8 @@
       handleReset() {},
     },
     mounted() {
-       this.$refs.search.handleFields('mediaId', this.$icon );
-    }
+      this.$refs.search.handleFields("mediaId", this.$icon);
+    },
   };
 </script>
 ```
@@ -245,14 +245,12 @@
   };
 </script>
 ```
+
 :::
-
-
 
 ### 参数漫游
 
-
-::: template 添加`roam` 可开启数据漫游，之前的搜索的记录保存在地址栏，刷新页面直接请求上一次的搜索记录，方便运营分享链接获取准确数据
+::: template 添加`roam` 可开启数据漫游，之前的搜索的记录保存在地址栏，刷新页面直接请求上一次的搜索记录，方便运营分享链接获取准确数据，如有联动数据，需要额外处理 （暴露的方法 `searchQuery`）
 
 ```html
 <template>
@@ -343,17 +341,17 @@
   };
 </script>
 ```
+
 :::
 
-### WithSearch Attributes  
+### WithSearch Attributes
 
-| 参数名   | 说明                                           | 类型     | 默认值 |
-| :------- | :--------------------------------------------- | :------- | :----- |
-| searchProps  | 搜索相关的 api 集合 | Object | 无     |
-| roam `v1.0.0-rc.12` | 开启参数漫游                         | Boolean   | false    |
+| 参数名              | 说明                | 类型    | 默认值 |
+| :------------------ | :------------------ | :------ | :----- |
+| searchProps         | 搜索相关的 api 集合 | Object  | 无     |
+| roam `v1.0.0-rc.12` | 开启参数漫游        | Boolean | false  |
 
-### SearchProps Attributes  
-
+### SearchProps Attributes
 
 | 参数名   | 说明                                           | 类型     | 默认值 |
 | :------- | :--------------------------------------------- | :------- | :----- |
@@ -366,15 +364,15 @@
 
 <h4 style='padding-top: 0;'>通用</h4>
 
-| 参数名            | 说明                            | 可选值/类型             | 默认值           |
-| :---------------- | :------------------------------ | :---------------------- | :--------------- |
-| key               | 传入 Form 组件的 model 中的字段 | -                       | 必填             |
-| name              | 标签文本                        | false/String            | 必填             |
-| type              | 表单类型，具体属性 ⬇️           | input/select/datePicker | input            |
-| defaultValue      | 默认值                          | -                       | undefined        |
-| styles            | 当前组件样式                    | Object                   | { width:'160px'} 时间控件为 220px              |
-| hidden            | 隐藏当前组件样式                | Boolean                 | false            |
-| placeholder       | 占位内容                        | String                  | 暂不支持时间组件 |
+| 参数名       | 说明                            | 可选值/类型             | 默认值                            |
+| :----------- | :------------------------------ | :---------------------- | :-------------------------------- |
+| key          | 传入 Form 组件的 model 中的字段 | -                       | 必填                              |
+| name         | 标签文本                        | false/String            | 必填                              |
+| type         | 表单类型，具体属性 ⬇️           | input/select/datePicker | input                             |
+| defaultValue | 默认值                          | -                       | undefined                         |
+| styles       | 当前组件样式                    | Object                  | { width:'160px'} 时间控件为 220px |
+| hidden       | 隐藏当前组件样式                | Boolean                 | false                             |
+| placeholder  | 占位内容                        | String                  | 暂不支持时间组件                  |
 
 #### select
 
@@ -391,15 +389,14 @@
 
 #### datePicker
 
-| 参数名                                                                                       | 说明         | 可选值/类型                                                                                | 默认值    |
-| :------------------------------------------------------------------------------------------- | :----------- | :----------------------------------------------------------------------------------------- | :-------- |
-| <del>dataType <b><del>v1.0.0-rc.10</del></b> 后，不建议使用 改用</del> <br/> <b>dateType  </b> `v1.0.0-rc.11` | 时间显示类型 | year/month/date/dates/ week/datetime/datetimerange/ **daterange**/monthrange               | daterange |
-| pickerOptions                                                                                | 时间格式     | Object [同 element](https://element.eleme.cn/#/zh-CN/component/date-picker#picker-options) | -         |
+| 参数名                                                                                                       | 说明         | 可选值/类型                                                                                | 默认值    |
+| :----------------------------------------------------------------------------------------------------------- | :----------- | :----------------------------------------------------------------------------------------- | :-------- |
+| <del>dataType <b><del>v1.0.0-rc.10</del></b> 后，不建议使用 改用</del> <br/> <b>dateType </b> `v1.0.0-rc.11` | 时间显示类型 | year/month/date/dates/ week/datetime/datetimerange/ **daterange**/monthrange               | daterange |
+| pickerOptions                                                                                                | 时间格式     | Object [同 element](https://element.eleme.cn/#/zh-CN/component/date-picker#picker-options) | -         |
 
 ### WithSearch Methods
 
-| 方法名                    | 说明                     | 参数                                                       |
-| :------------------------ | :----------------------- | :----------------------------------------------------------- |
-| handleFields `v1.0.0-rc.11` | 便于动态更改 `fields` 各项的数据 | Function(key: string, options?: array \| object) <br/> **key**  fields各项的key<br /> **options**  <br/> 1、格式为数组直接覆盖enums <br />2、格式为对象 key 可以是所有参数名，value 是赋值内容，<br /> 3、为空表示获取当前的fields集合 |
-| searchQuery `v1.0.0-rc.12` | 开启参数漫游后，获取序列化后 query 的数据 | Function |
-
+| 方法名                      | 说明                                      | 参数                                                                                                                                                                                                                                      |
+| :-------------------------- | :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| handleFields `v1.0.0-rc.11` | 便于动态更改 `fields` 各项的数据          | Function(key: string, options?: array \| object) <br/> **key** fields 各项的 key<br /> **options** <br/> 1、格式为数组直接覆盖 enums <br />2、格式为对象 key 可以是所有参数名，value 是赋值内容，<br /> 3、为空表示获取当前的 fields 集合 |
+| searchQuery `v1.0.0-rc.12`  | 开启参数漫游后，获取序列化后 query 的数据 | Function                                                                                                                                                                                                                                  |

@@ -155,7 +155,7 @@ $link-active: #409eff !default;
 
     &:hover {
       box-shadow: 0 0 8px 0 rgb(232 237 250 / 60%),
-      0 2px 4px 0 rgb(232 237 250 / 50%);
+        0 2px 4px 0 rgb(232 237 250 / 50%);
     }
 
     .mask-code {
@@ -442,5 +442,20 @@ $link-active: #409eff !default;
   .tooltip-tip {
     font-size: 14px !important;
     transform: translate(2px, 1px) !important;
+  }
+}
+
+.ird-notification {
+  .el-notification__title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #303133;
+    margin: 0;
+    line-height: 24px;
+  }
+  .el-notification__icon {
+    width: 19px;
+    font-size: 20px;
+    line-height: 25px;
   }
 }

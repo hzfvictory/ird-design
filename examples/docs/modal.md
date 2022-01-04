@@ -2,7 +2,7 @@
 
 ### 基础用法
 
-解决组件抽离 父组件不好控制 dialog (只能父传子，子组件 watch 监控 visible 的值) 展示隐藏问题，只管内部逻辑即可
+解决组件抽离后，父组件难以控制 dialog 展示隐藏问题「只能父传子，子组件 watch 监控 visible 的值」，使用此组件后只管内部逻辑即可
 
 ::: template
 
@@ -14,6 +14,10 @@
       title="标题"
       :modalVisible.sync="visible"
       @dialogClose="handleDialogClose"
+      @open="open"
+      @opened="opened"
+      @close="close"
+      @closed="closed"
     ></ird-modal>
   </div>
 </template>
@@ -29,6 +33,18 @@
     methods: {
       handleDialogClose() {
         console.log("关闭");
+      },
+      open() {
+        console.log("open");
+      },
+      opened() {
+        console.log("opened");
+      },
+      close() {
+        console.log("close");
+      },
+      closed() {
+        console.log("closed");
       },
     },
   };
@@ -239,3 +255,12 @@
 | —      | Modal 的内容           |
 | title  | Modal 标题区的内容     |
 | footer | Modal 按钮操作区的内容 |
+
+### Events
+
+| 事件名称 | 说明                        | 回调参数 |
+| :------- | :-------------------------- | :------- |
+| open     | Dialog 打开的回调           | —        |
+| opened   | Dialog 打开动画结束时的回调 | —        |
+| close    | Dialog 关闭的回调           | —        |
+| closed   | Dialog 关闭动画结束时的回调 | —        |

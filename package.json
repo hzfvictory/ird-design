@@ -112,7 +112,7 @@
     "IE 11",
     "not IE 10"
   ],
-  "homepage": "http://irdd.jing999.cn:9999",
+  "homepage": "http://irdd.mistra.site:9999",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hzfvictory/ird-design.git"

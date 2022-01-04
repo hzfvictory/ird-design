@@ -1,5 +1,9 @@
 <template>
-  <el-dialog :visible.sync="visible" v-bind="[$props, delProps]">
+  <el-dialog
+    :visible.sync="visible"
+    v-bind="[$props, delProps]"
+    v-on="handleEvents"
+  >
     <span slot="title" v-if="$slots.title">
       <slot name="title"></slot>
     </span>
@@ -62,6 +66,16 @@
           ary[key] = null;
         });
         return ary;
+      },
+      handleEvents() {
+        let events = this._events;
+        let handleEvents = {};
+        for (let key in events) {
+          if (["open", "opened", "close", "closed"].includes(key)) {
+            handleEvents[key] = events[key];
+          }
+        }
+        return handleEvents || {};
       },
     },
     methods: {
