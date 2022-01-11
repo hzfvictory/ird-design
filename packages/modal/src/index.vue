@@ -11,9 +11,11 @@
     <slot></slot>
 
     <span slot="footer" v-if="!$slots.footer">
-      <el-button @click="qualityDialogClose" :size="irdSize">取 消</el-button>
+      <el-button @click="qualityDialogClose" :size="irdSize">
+        {{ titles[0] || "取 消" }}
+      </el-button>
       <el-button type="primary" @click="closeDialog" :size="irdSize">
-        确 定
+        {{ titles[1] || "确 定" }}
       </el-button>
     </span>
     <template slot="footer" v-else>
@@ -45,6 +47,12 @@
         // 这个dialog 自带，封装的时候没发现
         type: Function,
         default: () => {},
+      },
+      titles: {
+        type: Array,
+        default: function () {
+          return ["取 消", "确 定"];
+        },
       },
     },
     computed: {
