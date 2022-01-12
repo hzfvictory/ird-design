@@ -232,7 +232,7 @@
 | :-------------------- | :-------------------------------------------------------------------------- | :---------------------------------- | :----- | :----------------- |
 | modal-visible         | 是否显示 Modal，支持 .sync 修饰符                                           | Boolean                             | —      | false              |
 | title                 | Modal 的标题，也可通过具名 slot （见下表）传入                              | String                              | —      | —                  |
-| width                 | Modal 的宽度                                                                | String                              | —      | 50%                |
+| width                 | Modal 的宽度                                                                | String                              | —      | 70%                |
 | fullscreen            | 是否为全屏 Modal                                                            | Boolean                             | —      | false              |
 | top                   | Modal CSS 中的 margin-top 值                                                | String                              | —      | 15vh               |
 | modal                 | 是否需要遮罩层                                                              | Boolean                             | —      | true               |

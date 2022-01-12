@@ -17,7 +17,7 @@ export default {
     return {};
   },
   props: {
-    attributes: {
+    attr: {
       type: Object,
       default() {
         return { ...attributesDefault };
@@ -28,7 +28,7 @@ export default {
     },
     styles: { type: String, default: "width:100%" },
     value: { type: [Number, String], default: undefined },
-    lable: {
+    label: {
       type: Array,
       default() {
         return [];
@@ -41,7 +41,7 @@ export default {
       this.$emit("change", val);
     },
     prependTitle() {
-      const item = this.lable.find((item = {}) => item.align === "left");
+      const item = this.label.find((item = {}) => item.align === "left");
       return (
         item && (
           <div class="el-input-group__prepend custom_prepend">{item.text}</div>
@@ -49,7 +49,7 @@ export default {
       );
     },
     appendTitle() {
-      const item = this.lable.find((item = {}) => item.align === "right");
+      const item = this.label.find((item = {}) => item.align === "right");
       return (
         item && (
           <div class="el-input-group__append custom_append">{item.text}</div>
@@ -57,18 +57,18 @@ export default {
       );
     },
     handleClass() {
-      const { lable } = this;
-      if (lable.length === 1) {
-        if (lable[0].align === "left")
+      const { label } = this;
+      if (label.length === 1) {
+        if (label[0].align === "left")
           return "input_number_text_left input_border_left_none";
-        if (lable[0].align === "right")
+        if (label[0].align === "right")
           return "input_number_text_left input_border_right_none";
       }
-      if (lable.length === 2) {
+      if (label.length === 2) {
         if (
-          lable[1].align !== lable[0].align &&
-          ["left", "right"].includes(lable[0].align) &&
-          ["left", "right"].includes(lable[1].align)
+          label[1].align !== label[0].align &&
+          ["left", "right"].includes(label[0].align) &&
+          ["left", "right"].includes(label[1].align)
         ) {
           return "input_number_text_left input_border_none";
         }
@@ -83,12 +83,12 @@ export default {
   },
   watch: {},
   render() {
-    const { styles, value, attributes, event } = this;
+    const { styles, value, attr, event } = this;
     return (
       <div class={"irdd_input-number"}>
         <div
           class={`ird-design_input-number  ${
-            attributes.align ? "input_number_text_center" : ""
+            attr.align ? "input_number_text_center" : ""
           } ${this.irdSize ? "ird-design_input-number--" + this.irdSize : ""}`}
         >
           {this.prependTitle()}
@@ -100,7 +100,7 @@ export default {
                 size: this.irdSize,
                 value,
                 ...attributesDefault,
-                ...attributes,
+                ...attr,
               },
               on: {
                 ...event,

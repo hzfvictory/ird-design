@@ -11,8 +11,8 @@
   <ird-input-number
     styles="width: 150px"
     v-model="value"
-    :lable="[{align:'left',text:'第'},{align:'right',text:'章'}]"
-    :attributes="{
+    :label="[{align:'left',text:'第'},{align:'right',text:'章'}]"
+    :attr="{
       controls:false,
       placeholder:'请输入起始章节',
       align:'center',
@@ -46,8 +46,8 @@
   <ird-input-number
     styles="width: 150px"
     v-model="value"
-    :lable="[{align:'right',text:'章'}]"
-    :attributes="{
+    :label="[{align:'right',text:'章'}]"
+    :attr="{
       controls:false,
       placeholder:'请输入起始章节'
     }"
@@ -81,8 +81,8 @@
     class="input_number_text_center"
     styles="width: 150px"
     v-model="value"
-    :lable="[{align:'right',text:'章'}]"
-    :attributes="{
+    :label="[{align:'right',text:'章'}]"
+    :attr="{
       controls:true,
       placeholder:'请输入起始章节'
     }"
@@ -110,13 +110,13 @@
 
 ### IrdInputNumber Attributes
 
-| 参数       | 类型   | 默认        | 说明                                                                                                |
-| :--------- | :----- | :---------- | :-------------------------------------------------------------------------------------------------- |
-| v-model    | Number | undefined   | v-model                                                                                             |
-| attributes | Object | {}          | 当前的属性,[同 element-ui](https://element.eleme.cn/2.14/#/zh-CN/component/input-number#attributes) |
-| event      | Object | {}          | 事件                                                                                                |
-| styles     | String | width: 100% | 当前表单的样式                                                                                      |
-| lable      | Array  | []          | 表单前后的修饰 lable； 示例：[{align:'left',text:'第'},{align:'right',text:'章'}]                   |
+| 参数    | 类型   | 默认        | 说明                                                                                           |
+| :------ | :----- | :---------- | :--------------------------------------------------------------------------------------------- |
+| v-model | Number | undefined   | v-model                                                                                        |
+| attr    | Object | {}          | 当前的属性,[同 element-ui](https://element.eleme.cn/#/zh-CN/component/input-number#attributes) |
+| event   | Object | {}          | 事件                                                                                           |
+| styles  | String | width: 100% | 当前表单的样式                                                                                 |
+| label   | Array  | []          | 表单前后的修饰 label； 示例：[{align:'left',text:'第'},{align:'right',text:'章'}]              |
 
 ### Attributes
 
