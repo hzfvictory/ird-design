@@ -6,5 +6,7 @@ cp -r dist/* ./
 
 cp -r dist/$VERSION/* ./
 
-
 cp -r `ls | grep -v -E 'dist|node_modules|src|product|build|examples' | xargs` ./product
+
+
+./upload.sh product
