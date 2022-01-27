@@ -16,3 +16,5 @@ upload.sh
 
 server
 build
+dist
+product
