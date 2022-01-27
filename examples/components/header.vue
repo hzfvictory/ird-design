@@ -9,13 +9,56 @@
       <div class="search-box">
         <input type="text" placeholder="搜索组件..." class="search" />
       </div>
+
+      <div class="irdd-version">
+        <el-dropdown trigger="click" @command="handleCommand">
+          <span class="el-dropdown-link">
+            {{ version }}
+            <i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item v-for="(val, ver) of versions" :command="ver">
+              {{ val }}
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import { Message } from "element-ui";
+  import versions from "../versions.json";
+
   export default {
-    name: "",
+    data() {
+      return {
+        versions,
+        version: "",
+      };
+    },
+    created() {
+      let version = window.location.pathname.split("/")[1];
+      let versionAll = Object.keys(versions);
+      this.version =
+        version || versionAll[versionAll.length - 2] || versionAll[0];
+    },
+    methods: {
+      handleCommand(command) {
+        const url = "http://irdd.mistra.site:9999/" + command + location.hash;
+        if (parseInt(command) >= 2) {
+          Message.warning("该版本只能内网下使用");
+          setTimeout(() => {
+            window.location.replace(url);
+          }, 2000);
+        } else {
+          window.location.replace(url);
+        }
+
+        // let url = location.origin+ '/' + command + location.hash;
+      },
+    },
   };
 </script>
 
@@ -41,6 +84,17 @@
         no-repeat 0;
       padding-left: 45px;
       outline: none;
+    }
+
+    .irdd-version {
+      margin-left: auto;
+      margin-right: 20px;
+
+      user-select: none;
+
+      .el-dropdown {
+        color: #888;
+      }
     }
   }
 </style>

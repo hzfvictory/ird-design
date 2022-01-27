@@ -1,7 +1,7 @@
 <template>
   <div class="online-run">
     <div class="codemirror-head">
-      <ird-button icon="ird-icon-play_fill" size="small" @click="handleRun">
+      <ird-button icon="ird-icon-play" size="small" @click="handleRun">
         运行
       </ird-button>
       <ird-button

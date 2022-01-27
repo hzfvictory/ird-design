@@ -12,8 +12,8 @@
     <ird-button type="text" @click="visible = true">点击打开 Modal</ird-button>
     <ird-modal
       title="标题"
-      :modalVisible.sync="visible"
-      @dialogClose="handleDialogClose"
+      :modal-visible.sync="visible"
+      @dialog-close="handleDialogClose"
       @open="open"
       @opened="opened"
       @close="close"
@@ -153,7 +153,9 @@
 ```html
 <template>
   <div>
-    <ird-button type="text" @click="visible = true">关闭前的回调</ird-button>
+    <ird-button type="text" @click="visible = true">
+      点击确认按钮 关闭前的回调
+    </ird-button>
     <ird-modal
       title="标题"
       :modalVisible.sync="visible"
@@ -193,7 +195,9 @@
 ```html
 <template>
   <div>
-    <ird-button type="text" @click="visible = true">关闭前的回调</ird-button>
+    <ird-button type="text" @click="visible = true">
+      弹框关闭前的回调
+    </ird-button>
     <ird-modal
       title="标题"
       :modalVisible.sync="visible"

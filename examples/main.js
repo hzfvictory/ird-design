@@ -2,16 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-/* elementUI */
-import { Tooltip, Input, Table, Popconfirm } from "element-ui";
+import "./plugins/element";
 
-Vue.use(Tooltip);
-Vue.use(Input);
-Vue.use(Table);
-Vue.use(Popconfirm);
-import "element-ui/lib/theme-chalk/index.css"; // 引入饿了么的样式
 /* component  start*/
-
 import DemoBlock from "./components/demo-block.vue";
 import ClipBoard from "./components/clipboard.vue";
 
@@ -19,7 +12,7 @@ Vue.component("demo-block", DemoBlock);
 Vue.component("clip-board", ClipBoard);
 /*component  end*/
 
-import "./ird";
+import "./plugins/irdd";
 
 /* mixin  start*/
 import clipboard from "./mixins/clipboard";

@@ -30,24 +30,14 @@
       "path": "/button"
     },
     {
-      "desc": "WithSearch 搜索框组件",
-      "name": "withSearch",
-      "path": "/with-search"
-    },
-    {
-      "desc": "EnhanceTable Table组件",
-      "name": "table",
-      "path": "/enhance-table"
+      "desc": "Select 选择器",
+      "name": "select",
+      "path": "/select"
     },
     {
       "desc": "InputNumber 数字输入框",
       "name": "input-number",
       "path": "/input-number"
-    },
-    {
-      "desc": "Select 选择器",
-      "name": "select",
-      "path": "/select"
     },
     {
       "desc": "Upload 上传文件",
@@ -63,6 +53,18 @@
       "desc": "utils 公共方法库",
       "name": "utils",
       "path": "/utils"
+    }
+  ],
+  "组合组件": [
+    {
+      "desc": "WithSearch 搜索框",
+      "name": "withSearch",
+      "path": "/with-search"
+    },
+    {
+      "desc": "EnhanceTable 表格",
+      "name": "table",
+      "path": "/enhance-table"
     }
   ]
 }

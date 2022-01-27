@@ -1,4 +1,4 @@
-## WithSearch 搜索框组件
+## WithSearch 搜索框
 
 ### 基础用法
 

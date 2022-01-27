@@ -40,8 +40,8 @@ Vue.use(Irdd);
 * */
 
 // 本地开发
-import Irdd from "../src"; // 编译之前的代码
-import "../src/styles/src/index.scss";
+import Irdd from "@/index"; // 编译之前的代码
+import "@/styles/src/index.scss";
 
 Vue.use(Irdd);
 //
