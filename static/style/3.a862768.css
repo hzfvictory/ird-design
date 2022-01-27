@@ -1,0 +1,4 @@
+.split-pane[data-v-b9835028]{position:relative;width:100%;height:100%}.split-pane .pane[data-v-b9835028]{position:absolute;top:0;bottom:0}.split-pane .left-pane[data-v-b9835028]{left:0}.split-pane .right-pane[data-v-b9835028]{right:0;padding:10px 10px 10px 16px;overflow:auto}.split-pane .split-line[data-v-b9835028]{width:6px;height:100%;background:#eee;z-index:10;cursor:col-resize}
+.online-run{position:absolute;width:100%;background:#fff;z-index:1000}.online-run .vue-codemirror,.online-run .CodeMirror{height:100%}.online-run .codemirror-head{display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;height:70px;padding:0 10px}.online-run .main{border:1px solid #dddee1;height:calc(100vh - 80px);min-height:800px}
+
+/*# sourceMappingURL=3.a862768.css.map*/
