@@ -1,0 +1,26 @@
+<svg data-v-5008d405="" version="1.0" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="2 -4 200 220"
+>
+    <g data-v-5008d405="" fill="#333" class="icon-text-wrapper icon-svg-group iconsvg"
+       transform="translate(-24,-23)">
+        <g class="iconsvg-imagesvg" transform="matrix(1,0,0,1,35.49500274658203,0)" opacity="1">
+            <rect fill="#333" fill-opacity="0" stroke-width="2" x="0" y="0" width="138" height="158.54916753617786"
+                  class="image-rect"></rect>
+            <svg x="0" y="0" width="260" height="260" filtersec="colorsb9522259959"
+                 class="image-svg-svg primary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.2 84.1">
+                    <title>logo</title>
+                    <path fill="none" d="M9.15 36.98L0 42.26l9.18 5.3 9.15-5.28-9.18-5.3z"></path>
+                    <path
+                            d="M36.54 10.6h.12l9.15-5.28L36.6 0l-9.21 5.32-9.15 5.28-9.12 5.27L0 21.13l9.15 5.28 9.12-5.26 9.12-5.27zm18.46 0l-9.15 5.28-9.15 5.29h-.12l-9.12 5.26-9.16 5.26L27.48 37l9.12-5.27 9.18-5.3 9.15-5.28 9.15-5.28z"
+                            fill="#008fb4"></path>
+                    <path fill="none" d="M36.6 21.13l-.06.04.06.03v-.07zM36.6 21.2l.06-.03-.06-.04v.07z"></path>
+                    <path d="M0 31.69v10.53l36.6 21.13V52.82zM0 63l36.6 21.1V74L0 52.86z" fill="#6c2887"></path>
+                    <path
+                            d="M64.05 26.41V37l9.15-5.29V21.13zm0 42.26l9.15-5.28V52.86l-9.15 5.28zm0-10.53l9.15-5.28V31.69L64.05 37zM45.72 79.26L54.9 74V42.26l-9.18 5.3zm0-31.7l9.18-5.3V31.69L45.72 37z"
+                            fill="#d92231"></path>
+                </svg>
+            </svg>
+        </g>
+    </g>
+</svg>
