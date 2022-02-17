@@ -36,13 +36,12 @@ let onlineRun = {
 };
 routes.push(onlineRun);
 
-const scrollBehavior = function(to, from, savedPosition) {
+const scrollBehavior = function (to, from, savedPosition) {
   // 临时解决办法
   return new Promise(() => {
     let newVal = this.app._route.hash;
     let container = document.getElementsByClassName("page-container")[0];
     if (newVal) {
-
       // 解决问号传参 不跳转的情况
       if (newVal.lastIndexOf("?") > -1) {
         let str_len = newVal.lastIndexOf("?");
@@ -61,7 +60,7 @@ const scrollBehavior = function(to, from, savedPosition) {
     }
   });
 };
-const hashPath = function() {
+const hashPath = function () {
   // 处理 hash 锚点跳转路径问题
   setTimeout(() => {
     let href = window.location.href;
@@ -78,7 +77,7 @@ const hashPath = function() {
   }, 20);
 };
 
-const queryAllIds = function() {
+const queryAllIds = function () {
   const getElementsByTagName = (ele) =>
     window.document.getElementsByTagName(ele);
   let eleAry = ["h3"]; // markdown-loader 能设置能跳转的标签

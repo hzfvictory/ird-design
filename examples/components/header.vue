@@ -48,7 +48,7 @@
       handleCommand(command) {
         const url = "http://irdd.mistra.site:9999/" + command + location.hash;
         if (parseInt(command) >= 2) {
-          Message.warning("该版本只能内网下使用");
+          Message.warning("该版本只能内网下使用,跳转中...");
           setTimeout(() => {
             window.location.replace(url);
           }, 2000);

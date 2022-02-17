@@ -57,7 +57,7 @@
 
 ### 插槽
 
-::: template scope 提供 `handleSearch、handleReset、 formData` 可以自定义插槽复用查询和重置的逻辑
+::: template scope 提供 `handleSearch、handleReset、clearSearch、formData` 可以自定义插槽复用查询和重置的逻辑
 
 ```html
 <template>
@@ -341,6 +341,93 @@
   };
 </script>
 ```
+:::
+
+
+### 动态删减
+
+::: template 不能直接给 `formData` 赋值，推荐使用 `$set`,不然会有输入不了的情况
+
+```html
+<template>
+  <div>
+    <ird-button type="primary" @click="addFields">添加</ird-button>
+    <ird-button
+      type="danger"
+      style="margin: 0 0 20px 20px"
+      @click="removeFields"
+    >
+      删除
+    </ird-button>
+
+    <with-search :searchProps="searchProps"  ref="search">
+     <template slot="search" slot-scope="scope">
+        <ird-button
+            type="primary"
+            style="margin-left: 10px"
+            size="small"
+            @click="scope.handleSearch"
+          >
+            查询
+          </ird-button>
+          <ird-button
+            type="primary"
+            style="margin-left: 10px"
+            size="small"
+            @click="scope.handleReset"
+          >
+            重置
+          </ird-button>
+         <ird-button
+            style="margin-left: 10px"
+            size="small"
+            @click="scope.handleClear"
+          >
+            清空
+          </ird-button>
+        </template>
+    </with-search>
+
+  </div>
+</template>
+<script>
+  let fields = { key: "name1", name: "序号1" };
+  export default {
+    data() {
+      return {
+        searchProps: {
+          fields: [{ ...fields }],
+          onSearch: this.handleSearch,
+          onReset: this.handleReset,
+          formData: {},
+        },
+      };
+    },
+    methods: {
+      handleSearch() {
+        console.log(this.searchProps.formData);
+      },
+      handleReset() {},
+      addFields() {
+        let fieldAry = this.searchProps.fields;
+        fieldAry.push({
+          key: `name${fieldAry.length + 1}`,
+          name: `序号${fieldAry.length + 1}`,
+        });
+        // this.searchProps.formData[`name${fieldAry.length}`] = "1111"; // 没有响应式  不可取
+        this.$set(
+          this.searchProps.formData,
+          `name${fieldAry.length}`,
+          fieldAry.length
+        );
+      },
+      removeFields() {
+        this.searchProps.fields.pop();
+      },
+    },
+  };
+</script>
+```
 
 :::
 
@@ -349,7 +436,7 @@
 | 参数名              | 说明                | 类型    | 默认值 |
 | :------------------ | :------------------ | :------ | :----- |
 | searchProps         | 搜索相关的 api 集合 | Object  | 无     |
-| roam `v1.0.0-rc.12` | 开启参数漫游        | Boolean | false  |
+| roam  | 开启参数漫游        | Boolean | false  |
 
 ### SearchProps Attributes
 
@@ -369,7 +456,7 @@
 | key          | 传入 Form 组件的 model 中的字段 | -                       | 必填                              |
 | name         | 标签文本                        | false/String            | 必填                              |
 | type         | 表单类型，具体属性 ⬇️           | input/select/datePicker | input                             |
-| defaultValue | 默认值                          | -                       | undefined                         |
+| defaultValue | 默认值 **引用数据类型必须添加**                          | -                       | undefined                         |
 | styles       | 当前组件样式                    | Object                  | { width:'160px'} 时间控件为 220px |
 | hidden       | 隐藏当前组件样式                | Boolean                 | false                             |
 | placeholder  | 占位内容                        | String                  | 暂不支持时间组件                  |
@@ -391,12 +478,15 @@
 
 | 参数名                                                                                                       | 说明         | 可选值/类型                                                                                | 默认值    |
 | :----------------------------------------------------------------------------------------------------------- | :----------- | :----------------------------------------------------------------------------------------- | :-------- |
-| <del>dataType <b><del>v1.0.0-rc.10</del></b> 后，不建议使用 改用</del> <br/> <b>dateType </b> `v1.0.0-rc.11` | 时间显示类型 | year/month/date/dates/ week/datetime/datetimerange/ **daterange**/monthrange               | daterange |
+| <b>dateType </b> | 时间显示类型 | year/month/date/dates/ week/datetime/datetimerange/ **daterange**/monthrange               | daterange |
 | pickerOptions                                                                                                | 时间格式     | Object [同 element](https://element.eleme.cn/#/zh-CN/component/date-picker#picker-options) | -         |
 
 ### WithSearch Methods
 
 | 方法名                      | 说明                                      | 参数                                                                                                                                                                                                                                      |
 | :-------------------------- | :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| handleFields `v1.0.0-rc.11` | 便于动态更改 `fields` 各项的数据          | Function(key: string, options?: array \| object) <br/> **key** fields 各项的 key<br /> **options** <br/> 1、格式为数组直接覆盖 enums <br />2、格式为对象 key 可以是所有参数名，value 是赋值内容，<br /> 3、为空表示获取当前的 fields 集合 |
-| searchQuery `v1.0.0-rc.12`  | 开启参数漫游后，获取序列化后 query 的数据 | Function                                                                                                                                                                                                                                  |
+| handleFields | 便于动态更改 `fields` 各项的数据          | Function(key: string, options?: array \| object) <br/> **key** fields 各项的 key<br /> **options** <br/> 1、格式为数组直接覆盖 enums <br />2、格式为对象 key 可以是所有参数名，value 是赋值内容，<br /> 3、为空表示获取当前的 fields 集合 |
+| searchQuery   | 开启参数漫游后，获取序列化后 query 的数据 | Function                                                                                                                                                                                                                                  |
+| handleSearch   | 执行组件搜索方法 | Function                                                                                                                                                                                                                                  |
+| handleReset   | 执行组件重置方法 | Function                                                                                                                                                                                                                                  |
+| handleClear   | 清空组件所有搜索数据 | Function                                                                                                                                                                                                                                  |

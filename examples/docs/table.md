@@ -164,7 +164,7 @@
         console.log(options, "查看");
       },
       remove(...options) {
-        alert('删除')
+        alert("删除");
         console.log(options, "删除");
       },
     },
@@ -522,7 +522,6 @@
 
 ### EnhanceTable Methods
 
-| 方法名   | 说明                 | 参数                                                         |
-| :------- | :------------------- | :----------------------------------------------------------- |
+| 方法名   | 说明                 | 参数                                                                                |
+| :------- | :------------------- | :---------------------------------------------------------------------------------- |
 | tableRef | elementui 静态方法名 | 同 [elementui](https://element.eleme.cn/2.14/#/zh-CN/component/table#table-methods) |
-

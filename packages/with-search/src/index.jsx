@@ -198,10 +198,20 @@ export default {
       const {
         searchProps: { onReset },
       } = this;
+      // 这块不能使用resetFields()  原因是因为页面刷新后，参数漫游的数据就会变成默认数据
       this.roam ? this.searchData = { ...this.resetSearchData } : this.$refs["formData"].resetFields();
       this.$nextTick(() => {
         onReset && onReset();
         this.roam && window.history.pushState(null, null, window.location.href.split("?")[0]);
+      });
+    },
+    handleClear() {
+      const searchProps = this.searchProps || {};
+      const { fields = [] } = searchProps;
+      let resetSearchData = this.searchData;
+      fields.length &&
+      [...searchProps.fields].map((item) => {
+        resetSearchData[item.key] = item.defaultValue || undefined;
       });
     },
     changeFormDom(val, item) {
@@ -268,6 +278,7 @@ export default {
               ? this.$scopedSlots.search({
                 handleSearch: this.handleSearch,
                 handleReset: this.handleReset,
+                handleClear: this.handleClear,
                 formData: this.searchData,
               })
               : this.typeSearchBtn()}

@@ -109,7 +109,6 @@
 
 :::
 
-
 ### 自定义选项标签
 
 ::: template
@@ -118,20 +117,20 @@
 <template>
   <div>
     自定义选项标签文字
-   <ird-select
-       v-model="formData.value1"
-       :data="[{id:1,name:'朝花夕拾'},{id:2,name:'骆驼祥子'}]"
-       placeholder="请选择"
-       :render-value="renderValue"
-     />
+    <ird-select
+      v-model="formData.value1"
+      :data="[{id:1,name:'朝花夕拾'},{id:2,name:'骆驼祥子'}]"
+      placeholder="请选择"
+      :render-value="renderValue"
+    />
 
     自定义下拉框标签文字
     <ird-select
-        v-model="formData.value2"
-        :data="[{id:1,name:'朝花夕拾'},{id:2,name:'骆驼祥子'}]"
-        placeholder="请选择"
-        :render-label="renderValue"
-      />
+      v-model="formData.value2"
+      :data="[{id:1,name:'朝花夕拾'},{id:2,name:'骆驼祥子'}]"
+      placeholder="请选择"
+      :render-label="renderValue"
+    />
   </div>
 </template>
 <script>
@@ -146,16 +145,15 @@
     },
     methods: {
       renderValue(id) {
-          let bookAry = {1:'朝花夕拾-鲁迅',2:'骆驼祥子-老舍'}
-         return `${bookAry[id]}`;
-       },
+        let bookAry = { 1: "朝花夕拾-鲁迅", 2: "骆驼祥子-老舍" };
+        return `${bookAry[id]}`;
+      },
     },
   };
 </script>
 ```
 
 :::
-
 
 ### 有禁用选项
 
@@ -210,23 +208,20 @@
 
 ### IrdSelect Attributes
 
-| 参数名              | 类型                          | 默认值                    | 说明                                         |
-| :------------------ | :---------------------------- | :------------------------ | :------------------------------------------- |
-| v-model             | String, Number, Array, Object | ''                        | v-model                                      |
-| data                | Array                         | []                        | 当前的数据                                   |
-| key-value           | Boolean                       | true                      | key-value 的形式展示                         |
-| type                | Object                        | { name: "name", id: "id"} | 引导数据的格式转换                           |
-| clearable           | Boolean                       | true                      | 是否有一键清空                               |
-| multiple            | Boolean                       | false                     | 是否支持多选                                 |
-| <del>collapse</del> | Boolean                       | false                     | 「不建议使用」多选后以数字展示选择了多少个数 |
-| collapse-tags       | Boolean                       | false                     | 同上 兼容老版                                |
-| filterable          | Boolean                       | true                      | 组件可搜索                                   |
-| dis-id              | String, Number                | ''                        | 单个 item 不能选择,多个改数据源添加 disabled |
-| <del>dis-all </del> | Boolean                       | false                     | 「不建议使用」当前的选框不能使用             |
-| disabled            | Boolean                       | false                     | 同上 兼容老版                                |
-| placeholder         | String                        | 全部                      | placeholder                                  |
-| <del>styles</del>   | Object x                      | { width: '161px'}         | 添加样式「不建议使用」，vue 支持直接设置     |
-| render-value        | Function(id: string, name:string)                        | 选项的标签            | 自定义选项标签的文字                             |
-| render-label        | Function(id: string, name:string)                      | 选项的标签      | 自定义下拉框标签的文字                               |
-| onFocus/focus       |     Function                 | (event: Event)            | 失去焦点的事件                               |
-| onChange/change     | Function                      | 目前的选中值              | 选中值发生变化时触发                         |
+| 参数名              | 类型                              | 默认值                    | 说明                                         |
+| :------------------ | :-------------------------------- | :------------------------ | :------------------------------------------- |
+| v-model             | String, Number, Array, Object     | ''                        | v-model                                      |
+| data                | Array                             | []                        | 当前的数据                                   |
+| key-value           | Boolean                           | true                      | key-value 的形式展示                         |
+| type                | Object                            | { name: "name", id: "id"} | 引导数据的格式转换                           |
+| clearable           | Boolean                           | true                      | 是否有一键清空                               |
+| multiple            | Boolean                           | false                     | 是否支持多选                                 |
+| collapse-tags       | Boolean                           | false                     | 同上 兼容老版                                |
+| filterable          | Boolean                           | true                      | 组件可搜索                                   |
+| dis-id              | String, Number                    | ''                        | 单个 item 不能选择,多个改数据源添加 disabled |
+| disabled            | Boolean                           | false                     | 同上 兼容老版                                |
+| placeholder         | String                            | 全部                      | placeholder                                  |
+| render-value        | Function(id: string, name:string) | 选项的标签                | 自定义选项标签的文字                         |
+| render-label        | Function(id: string, name:string) | 选项的标签                | 自定义下拉框标签的文字                       |
+| focus       | Function                          | (event: Event)            | 失去焦点的事件                               |
+| change     | Function                          | 目前的选中值              | 选中值发生变化时触发                         |
