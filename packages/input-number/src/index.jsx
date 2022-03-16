@@ -80,10 +80,18 @@ export default {
     irdSize() {
       return this.size || this.$IRDD?.size;
     },
+    modelValue: {
+      get() {
+        return this.value === null ? undefined : this.value;
+      },
+      set(val) {
+        this.value = val;
+      },
+    },
   },
   watch: {},
   render() {
-    const { styles, value, attr, event } = this;
+    const { styles, modelValue, attr, event } = this;
     return (
       <div class={"irdd_input-number"}>
         <div
@@ -98,7 +106,7 @@ export default {
               style: styles,
               props: {
                 size: this.irdSize,
-                value,
+                value: modelValue,
                 ...attributesDefault,
                 ...attr,
               },

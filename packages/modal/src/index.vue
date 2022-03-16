@@ -46,11 +46,12 @@
       beforeModalClose: {
         // 这个dialog 自带，封装的时候没发现
         type: Function,
-        default: () => {},
+        default: () => {
+        },
       },
       titles: {
         type: Array,
-        default: function () {
+        default: function() {
           return ["取 消", "确 定"];
         },
       },
@@ -92,6 +93,7 @@
       },
       changeModalVisible() {
         this.$emit("dialogClose");
+        this.$emit("dialog-close");
         this.$emit("update:modalVisible", false);
       },
       closeDialog() {
@@ -99,7 +101,7 @@
         if (before && before.then) {
           // Promise 执行后才会进入 beforeModalClose 方法，不执行到此终止
           before.then(() => {
-            this.$emit("update:modalVisible", false);
+            this.changeModalVisible();
           });
         } else if (typeof this.beforeClose === "function") {
           this.beforeClose(this.changeModalVisible);

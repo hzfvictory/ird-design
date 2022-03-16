@@ -13,7 +13,7 @@
     <ird-modal
       title="标题"
       :modal-visible.sync="visible"
-      @dialog-close="handleDialogClose"
+      @dialogClose="handleDialogClose"
       @open="open"
       @opened="opened"
       @close="close"
@@ -32,7 +32,7 @@
     computed: {},
     methods: {
       handleDialogClose() {
-        console.log("关闭");
+        console.log("仅针对确认按钮；关闭");
       },
       open() {
         console.log("open");
@@ -66,7 +66,6 @@
     <ird-modal
       title="标题"
       :modalVisible.sync="visible"
-      @dialogClose="handleDialogClose"
     >
       <span slot="title">SLOT标题</span>
       <div slot="footer">
@@ -86,9 +85,7 @@
     },
     computed: {},
     methods: {
-      handleDialogClose() {
-        console.log("关闭");
-      },
+
     },
   };
 </script>
@@ -109,7 +106,6 @@
     <ird-modal
       title="标题"
       :modalVisible.sync="visible"
-      @dialogClose="handleDialogClose"
       append-to-body
     >
       <div slot="footer">
@@ -136,9 +132,7 @@
     },
     computed: {},
     methods: {
-      handleDialogClose() {
-        console.log("关闭");
-      },
+
     },
   };
 </script>
@@ -247,8 +241,8 @@
 | close-on-click-modal  | 是否可以通过点击 modal 关闭 Modal                                           | Boolean                             | —      | true               |
 | close-on-press-escape | 是否可以通过按下 ESC 关闭 Modal                                             | Boolean                             | —      | true               |
 | show-close            | 是否显示关闭按钮                                                            | Boolean                             | —      | true               |
-| before-close          | 关闭前的回调，会暂停 Modal 的关闭                                           | function(done)，done 用于关闭 Modal | —      | —                  |
-| before-modal-close    | 关闭前的回调，会暂停 Modal 的关闭                                           | 使用 Promise                        | —      | —                  |
+| before-close          | 关闭前的回调，会暂停 Modal 的关闭 ( X icon也会阻止)                                         | function(done)，done 用于关闭 Modal | —      | —                  |
+| before-modal-close    | 关闭前的回调，会暂停 Modal 的关闭 ( X 不会阻止)                                         | 使用 Promise                        | —      | —                  |
 | center                | 是否对头部和底部采用居中布局                                                | Boolean                             | —      | false              |
 | destroy-on-close      | 关闭时销毁 Modal 中的元素                                                   | Boolean                             | —      | false              |
 | titles                | 自定义列表 footer 标题                                                      | Array                               | —      | ["取 消", "确 定"] |
@@ -269,3 +263,4 @@
 | opened   | Dialog 打开动画结束时的回调 | —        |
 | close    | Dialog 关闭的回调           | —        |
 | closed   | Dialog 关闭动画结束时的回调 | —        |
+| dialogClose   | Dialog 关闭回调 `仅对确认按钮执行` | —        |
