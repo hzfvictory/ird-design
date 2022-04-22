@@ -1,6 +1,6 @@
 {
   "name": "irdd",
-  "version": "1.0.2",
+  "version": "1.0.25",
   "title": "Ird Design",
   "main": "lib/ird-design.common",
   "module": "es/index.js",
@@ -27,6 +27,8 @@
     "server": "nodemon server/index.js",
     "pretty-quick": "node server/prettier.js",
     "new-component": "node build/bin/new.js",
+    "publish:alpha": "npm publish  --registry=https://registry.npmjs.org --tag alpha",
+    "publish:dev": "npm publish --registry=https://registry.npmjs.org --tag dev",
     "icon-init": "node build/bin/iconInit.js"
   },
   "husky": {

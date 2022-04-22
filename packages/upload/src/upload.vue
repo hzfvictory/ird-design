@@ -11,7 +11,7 @@
       <i v-if="!value" class="el-icon-plus avatar-uploader-icon" />
 
       <template v-else>
-        <template v-if="rule.format.includes('video')">
+        <template v-if="(rule.format || '').includes('video')">
           <video class="avatar" controls :src="value" />
           <i
             class="el-icon-delete"
@@ -94,7 +94,7 @@
           let isDura = new Promise((resolve, reject) => {
             const videoUrl = URL.createObjectURL(file);
             const videoObj = document.createElement("video");
-            videoObj.onloadedmetadata = function () {
+            videoObj.onloadedmetadata = function() {
               URL.revokeObjectURL(videoUrl);
 
               function check(str, m, n) {
@@ -109,7 +109,7 @@
               console.log(
                 "宽:" + videoObj.videoWidth,
                 "长:" + videoObj.videoHeight,
-                "时长：" + videoObj.duration
+                "时长：" + videoObj.duration,
               );
 
               if (
@@ -151,7 +151,7 @@
             (err) => {
               Message.error(err.message);
               return Promise.reject();
-            }
+            },
           );
 
           if (!isJPG) Message.error(`上传视频只能是${format}格式!`);
@@ -163,10 +163,10 @@
           return isJPG && isLt && isDura;
         } else {
           if (width || height) {
-            isSize = new Promise(function (resolve, reject) {
+            isSize = new Promise(function(resolve, reject) {
               let _URL = window.URL || window.webkitURL;
               let img = new Image();
-              img.onload = function () {
+              img.onload = function() {
                 let valid = img.width === width && img.height === height;
                 valid ? resolve() : reject(img);
               };
@@ -179,7 +179,7 @@
                 console.log("宽:" + err.width, "长:" + err.height);
                 Message.error(`上传的图片必须是${width}*${height}!`);
                 return Promise.reject();
-              }
+              },
             );
           }
           if (!isJPG) Message.error(`上传图片只能是${format}格式!`);

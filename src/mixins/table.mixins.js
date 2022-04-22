@@ -10,7 +10,7 @@ const table = {
         multipleSelection: [], // 列表多选
       },
       tableOptionsMethod: {
-        "selection-change": this.handleSelectionChange
+        "selection-change": this.handleSelectionChange,
       },
       paginationOptions: {
         class: "fyDiv",
@@ -24,9 +24,23 @@ const table = {
       },
       paginationOptionsMethod: {
         "size-change": this.handleSizeChange,
-        "current-change": this.handleCurrentChange
-      }
+        "current-change": this.handleCurrentChange,
+      },
+      parent: {},
     };
+  },
+  created() {
+    if (typeof this.namespaceURI === "string") {
+      let parent = this.$parent;
+      while (parent) {
+        if (!parent[this.namespaceURI]) {
+          parent = parent.$parent;
+        } else {
+          this.parent = parent;
+          return parent;
+        }
+      }
+    }
   },
   methods: {
     // 获取数据回调处理分页和data
@@ -50,21 +64,28 @@ const table = {
     // 改变页数
     handleCurrentChange(currentPage) {
       this.paginationOptions.currentPage = currentPage;
-      this.queryList ? this.queryList() : this.$parent.queryList();
+      this.queryNameSpaceAPI();
     },
     // 选择页数
     handleSizeChange(currentSize) {
       this.paginationOptions.pageSize = currentSize;
       this.paginationOptions.currentPage = 1;
-      this.queryList ? this.queryList() : this.$parent.queryList();
+      this.queryNameSpaceAPI();
     },
     // 搜索专用
     handleSearchChange(currentPage = 1, pageSize = defaultPageSize) {
       this.paginationOptions.pageSize = pageSize;
       this.paginationOptions.currentPage = currentPage;
-      this.queryList ? this.queryList() : this.$parent.queryList();
-    }
-  }
+      this.queryNameSpaceAPI();
+    },
+    queryNameSpaceAPI() {
+      if (typeof this.namespaceURI === "function") {
+        this.namespaceURI();
+      } else {
+        this.parent[this.namespaceURI] ? this.parent[this.namespaceURI]() : console.error(("[irdd warn]: " + "请填写正确的namespaceURI"));
+      }
+    },
+  },
 };
 
 export default table;

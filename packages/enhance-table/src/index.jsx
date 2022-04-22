@@ -36,6 +36,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 请求列表接口名称
+    namespaceURI: {
+      type: String | Function,
+      default: "queryList",
+    },
   },
   computed: {
     irdSize() {
@@ -47,9 +52,9 @@ export default {
     tableRef() {
       return this.$refs["tableRef"];
     },
-    handleButtons(item, record) {
+    handleButtons(item, record, index) {
       // 处理操作部分按钮 -> 可以在外面自定义，必须是jsx
-      if (item.handleButtons) return item.handleButtons(record);
+      if (item.handleButtons) return item.handleButtons(record, index);
 
       return (
         !!item.list.length &&
@@ -151,8 +156,8 @@ export default {
                       ...item,
                     },
                     scopedSlots: {
-                      default: ({ row }) => {
-                        return this.handleButtons(item, row);
+                      default: ({ row, $index }) => {
+                        return this.handleButtons(item, row, $index);
                       },
                     },
                   }}

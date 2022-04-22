@@ -57,7 +57,7 @@
 
 ### 插槽
 
-::: template scope 提供 `handleSearch、handleReset、clearSearch、formData` 可以自定义插槽复用查询和重置的逻辑
+::: template scope 提供 `handleSearch、handleReset、handleClear、formData` 可以自定义插槽复用查询和重置的逻辑
 
 ```html
 <template>
