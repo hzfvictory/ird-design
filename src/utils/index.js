@@ -64,7 +64,7 @@ export const formatterNumber = (num, val = 2) => {
   const [integer, decimal = ""] = nwe_num.toLocaleString().split(".");
 
   if (val === 0) return integer;
-  return integer + "." + decimal.padEnd(val, "0");
+  return integer + "." + decimal.padEnd(val, "0")?.substr(0,val);
 };
 
 /* 正则 */

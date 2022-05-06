@@ -1,13 +1,11 @@
 <template>
   <el-select
     v-bind="[$props, delProps]"
+    v-on="_events"
     :size="irdSize"
     :style="styles"
     :collapse-tags="collapse || collapseTags"
     :disabled="disAll || disabled"
-    @focus="focus"
-    @change="change"
-    @input="input($event)"
   >
     <el-option
       v-for="(item, index) of data"
@@ -20,7 +18,7 @@
       :value="item[type['id']]"
       :key="item[type['id']] + '--' + index"
     >
-      {{ renderSelfLabel(item[type['id']], item[type['name']], keyValue) }}
+      {{ renderSelfLabel(item[type["id"]], item[type["name"]], keyValue) }}
     </el-option>
   </el-select>
 </template>
@@ -119,17 +117,21 @@
         }
         return val;
       },
-      input(val) {
-        this.$emit("input", val);
-      },
-      focus(ev) {
-        this.$emit("onFocus", ev); // 历史遗留
-        this.$emit("focus", ev);
-      },
-      change(val) {
-        this.$emit("onChange", val); // 历史遗留
-        this.$emit("change", val);
-      },
+      //   input(val) {
+      //     this.$emit("input", val);
+      //   },
+      //   focus(ev) {
+      //     this.$emit("onFocus", ev); // 历史遗留
+      //     this.$emit("focus", ev);
+      //   },
+      //   change(val) {
+      //     this.$emit("onChange", val); // 历史遗留
+      //     this.$emit("change", val);
+      //   },
     },
   };
 </script>
+
+<!--@focus="focus"-->
+<!--@change="change"-->
+<!--@input="input($event)"-->

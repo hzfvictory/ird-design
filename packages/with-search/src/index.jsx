@@ -95,6 +95,13 @@ export default {
         >
           {item.name !== false && <div class="prepend small">{item.name}</div>}
           <ird-select
+            {...{
+              on: {
+                ...item,
+                change: (val) => this.changeFormDom(val, item),
+              },
+            }}
+
             v-model={this.searchData[item.key]}
             type={item.enumType}
             data={item.enums}
@@ -112,7 +119,6 @@ export default {
             clearable={item["clearable"] !== false}
             dis-all={item["disabled"]}
             filterable={item["filterable"]}
-            onChange={(val) => this.changeFormDom(val, item)}
           />
         </el-form-item>
       );
@@ -215,6 +221,7 @@ export default {
       });
     },
     changeFormDom(val, item) {
+      item.change && item.change(val);
       let enums = item.enums;
       if (!enums[0].link) return;
       for (let i = 0; i < enums.length; i++) {

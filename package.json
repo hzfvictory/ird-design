@@ -1,6 +1,6 @@
 {
   "name": "irdd",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "title": "Ird Design",
   "main": "lib/ird-design.common",
   "module": "es/index.js",

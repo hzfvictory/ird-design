@@ -124,6 +124,8 @@
               enumType: { id: "font_class", name: "name" },
               clearable: false,
               defaultValue: [],
+             'visible-change':this.visibleChange,
+             change:this.changeVal,
             },
             {
               key: "system",
@@ -156,6 +158,12 @@
     methods: {
       handleSearch() {},
       handleReset() {},
+      changeVal(val){
+       console.log(val);
+     },
+      visibleChange(val){
+      console.log(val,1212);
+       }
     },
     mounted() {
       this.$refs.search.handleFields("mediaId", this.$icon);
@@ -463,6 +471,10 @@
 
 #### select
 
+`v1.0.25后 兼容 ElementUI 所有api包括事件` [更多跳转](https://element.eleme.cn/2.15/#/zh-CN/component/select#select-events)
+
+<br/>
+
 | 参数名     | 说明                           | 可选值/类型 | 默认值                |
 | :--------- | :----------------------------- | :---------- | :-------------------- |
 | enums      | 选框的数据                     | -           | []                    |
@@ -473,6 +485,7 @@
 | disabled   | 禁止使用选框                   | Boolean     | false                 |
 | clearable  | 是否显示清除按钮               | Boolean     | true                  |
 | filterable | 是否可搜索                     | Boolean     | true                  |
+
 
 #### datePicker
 
