@@ -196,6 +196,7 @@
         const { data, errorMsg } = res;
         try {
           this.$emit("input", data.url);
+          this.$emit("on-success", data.url);
           // _.set(this.formData, this.prop, data.url);
         } catch (e) {
           this.$message.error(errorMsg);
@@ -204,6 +205,7 @@
       // 图片删除
       avatarRemove() {
         this.$emit("input", undefined);
+        this.$emit("on-remove");
         // _.set(this.formData, this.prop, undefined);
       },
       // 图片预览
