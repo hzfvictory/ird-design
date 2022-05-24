@@ -76,6 +76,7 @@ export default {
             clearable={item["clearable"] !== false}
             size={this.irdSize}
             style={{ width: "160px", ...item.styles }}
+            nativeOnkeydown={this.keyupEnter}
           />
         </el-form-item>
       );
@@ -195,7 +196,7 @@ export default {
       if (this.roam) {
         // let form = qs.stringify(this.searchData); // 这种方案number直接转为string
         let form = qs.stringify({ searchParams: JSON.stringify(this.searchData) });
-        window.history.pushState({ form }, form, window.location.href.split("?")[0] + `?${form}`);
+        window.history.replaceState({ form }, form, window.location.href.split("?")[0] + `?${form}`);
       }
       onSearch && onSearch(this.searchData);
       // this.$emit('search', this.searchData)
@@ -208,7 +209,7 @@ export default {
       this.roam ? this.searchData = { ...this.resetSearchData } : this.$refs["formData"].resetFields();
       this.$nextTick(() => {
         onReset && onReset();
-        this.roam && window.history.pushState(null, null, window.location.href.split("?")[0]);
+        this.roam && window.history.replaceState(null, null, window.location.href.split("?")[0]);
       });
     },
     handleClear() {
@@ -244,6 +245,12 @@ export default {
           this.searchData[fieldsItemData[_index].key] =
             fieldsItemData[_index].defaultValue;
         }
+      }
+    },
+    keyupEnter(event) {
+      let key = event.keyCode || window.event.keyCode;
+      if (key === 13) {
+        this.handleSearch();
       }
     },
   },
